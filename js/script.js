@@ -2,12 +2,12 @@
 const WHATSAPP_NUMBER = '6281932977629';
 
 const cameraProducts = [
-  { id: 'canon-m100', name: 'Canon M100', category: 'kamera', image: 'CAM 2.jpeg', price24: 180000, price48: 360000 },
-  { id: 'canon-a2500', name: 'Canon A2500', category: 'kamera', image: 'CAM 1.jpeg', price24: 95000, price48: 180000 },
-  { id: 'fujifilm-xa5', name: 'Fujifilm XA5', category: 'kamera', image: 'CAM 3.jpeg', price24: 170000, price48: 335000 },
-  { id: 'sony-dsc-w510', name: 'Sony DSC W510', category: 'kamera', image: 'CAM 4.jpeg', price24: 85000, price48: 165000 },
-  { id: 'olympus-tg-320', name: 'Olympus TG 320', category: 'kamera', image: 'CAM 5.jpeg', price24: 75000, price48: 145000 },
-  { id: 'fujifilm-xa3', name: 'Fujifilm XA3', category: 'kamera', image: 'CAM 6.jpeg', price24: 150000, price48: 295000 }
+  { id: 'canon-m100', name: 'Canon M100', category: 'kamera', image: 'canon-m100-24-jam-180k-48-jam-360k.jpeg', price24: 180000, price48: 360000 },
+  { id: 'canon-a2500', name: 'Canon A2500', category: 'kamera', image: 'canon-a2500-24-jam-95k-48-jam-180k.jpeg', price24: 95000, price48: 180000 },
+  { id: 'fujifilm-x-a5', name: 'Fujifilm X-A5', category: 'kamera', image: 'fujifilm-x-a5-24-jam-170k-48-jam-335k.jpeg', price24: 170000, price48: 335000 },
+  { id: 'sony-dsc-w830', name: 'Sony DSC W830', category: 'kamera', image: 'sony-dsc-w830-24-jam-165k-48-jam-165k.jpeg', price24: 165000, price48: 165000 },
+  { id: 'olympus-tg-320', name: 'Olympus TG 320', category: 'kamera', image: 'olympus-tg-320-24-jam-75k-48-jam-145k.jpeg', price24: 75000, price48: 145000 },
+  { id: 'fujifilm-x-a3', name: 'Fujifilm X-A3', category: 'kamera', image: 'fujifilm-x-a3-24-jam-150k-48-jam-295k.jpeg', price24: 150000, price48: 295000 }
 ];
 
 const extraProducts = [
