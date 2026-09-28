@@ -11,9 +11,9 @@ const cameraProducts = [
 ];
 
 const extraProducts = [
-  { id: 'instax-mini-13', name: 'Instax Mini 13', category: 'accessories', note: 'Camera only', price24: 45000, visual: 'INSTAX' },
-  { id: 'paper-refill-putih', name: 'Paper Refill Putih Polos', category: 'accessories', note: '1 pack', price24: 170000, visual: 'PAPER' },
-  { id: 'instax-bundle', name: 'Bundling Kamera + Paper', category: 'accessories', note: 'Putih polos, 1 pack', price24: 210000, visual: 'BUNDLE' },
+  { id: 'instax-mini-13', name: 'Instax Mini 13', category: 'accessories', note: 'Camera only', price24: 35000, image: 'instax-mini-13-35k.jpeg', visual: 'INSTAX' },
+  { id: 'paper-refill-putih', name: 'Paper Refill Fuji Polaroid', category: 'accessories', note: '5 pack', price24: 170000, image: 'paper-refill-fuji-polaroid-5-pack-170k.jpg', visual: 'PAPER' },
+  { id: 'instax-bundle', name: 'Bundling Kamera + Paper Polaroid', category: 'accessories', note: '1 pack', price24: 210000, image: 'bundling-kamera-paper-polaroid-1-pack-210k.jpg', visual: 'BUNDLE' },
   { id: 'jasa-pindahan-foto', name: 'Jasa Pindahan Foto', category: 'accessories', price24: 15000, visual: 'TRANSFER' },
   { id: 'type-c-lighting', name: 'Type-C Lighting', category: 'accessories', price24: 20000, visual: 'LIGHT' }
 ];
@@ -42,12 +42,12 @@ const englishText = {
   'Booking Sekarang': 'Book Now', 'Buka menu': 'Open menu', 'Tutup menu': 'Close menu',
   'A little camera friend': 'Your camera friend', 'Teman baik untuk cerita yang tak terulang.': 'A friend for stories that happen only once.',
   'Pilih teman ceritamu': 'Choose your story companion', 'Mulai dari yang kamu butuhkan': 'Start with what you need',
-  'Jelajahi koleksi dan layanan Teman Camera.': 'Explore Teman Camera cameras and services.',
+  'Jelajahi koleksi dan layanan temankamera_.': 'Explore temankamera_ cameras and services.',
   'Kamera': 'Camera', 'Temukan kamera untuk momenmu': 'Find a camera for your moments',
   'Ketersediaan melalui WhatsApp': 'Check availability on WhatsApp', 'Accessories': 'Accessories',
   'Instax dan layanan tambahan': 'Instax and extra services', 'Pilihan teman-teman': 'Customer favorites',
   'Siap ikut jalan-jalan': 'Ready for your next trip', 'Harga rental kamera jelas, untuk cerita yang beragam.': 'Clear rental prices for all kinds of stories.',
-  'Lihat semua pilihan kamera': 'See all cameras', 'Kenapa TEMAN CAMERA?': 'Why TEMAN CAMERA?',
+  'Lihat semua pilihan kamera': 'See all cameras', 'Kenapa temankamera_?': 'Why temankamera_?',
   'Teman yang siap menemani setiap momen.': 'A friend for every moment.',
   'Kami ingin bikin pengalaman sewa kamera terasa lebih mudah, hangat, dan menyenangkan.': 'We make camera rentals easy, welcoming, and fun.',
   'Bisa tanya dulu dan pilih kamera sesuai kebutuhanmu.': 'Ask us first and find the camera that fits.',
@@ -55,7 +55,7 @@ const englishText = {
   'Praktis': 'Easy booking', 'Mulai tanya ketersediaan lewat WhatsApp.': 'Ask about availability on WhatsApp.',
   'Siap berangkat': 'Ready to go', 'Kamera dipersiapkan sebelum digunakan.': 'Cameras are prepared before use.',
   'Your next story starts here': 'Your next story starts here', 'Siap menangkap momenmu?': 'Ready to capture your moments?',
-  'Pilih kamera favorit dan ngobrol dengan Teman Camera lewat WhatsApp.': 'Pick your favorite camera and chat with us on WhatsApp.',
+  'Pilih kamera favorit dan ngobrol dengan temankamera_ lewat WhatsApp.': 'Pick your favorite camera and chat with temankamera_ on WhatsApp.',
   'Renting out gear, capturing memories.': 'Renting out gear, capturing memories.',
   'Pilih teman ceritamu': 'Find your camera friend', 'Katalog Rental': 'Rental Catalog',
   'Daftar kamera dan aksesori dengan harga yang jelas. Ketersediaan menyesuaikan tanggal sewamu.': 'Browse cameras and accessories with clear pricing. Availability depends on your dates.',
@@ -64,42 +64,42 @@ const englishText = {
   'Belum ada daftar lensa.': 'No lenses listed yet.', 'Belum ada produk di kategori ini.': 'No products in this category yet.',
   'Pilih produk dari katalog.': 'Choose a product from the catalog.', 'Kembali ke Katalog': 'Back to Catalog',
   'Galeri Testimoni': 'Customer Gallery', 'Dari teman, untuk kenangan': 'From our customers, with love',
-  'Foto momen yang dibagikan pelanggan Teman Camera.': 'Moments shared by Teman Camera customers.',
+  'Foto momen yang dibagikan pelanggan temankamera_.': 'Moments shared by temankamera_ customers.',
   'Cerita dalam setiap frame': 'Stories in every frame', 'momen pelanggan': 'customer moments',
-  'Terima kasih sudah mempercayakan momenmu kepada Teman Camera.': 'Thank you for trusting us with your moments.',
+  'Terima kasih sudah mempercayakan momenmu kepada temankamera_.': 'Thank you for trusting temankamera_ with your moments.',
   'Kenalan lebih dekat': 'Get to know us', 'Teman untuk momen-momen yang ingin disimpan lebih lama.': 'Your friend for moments worth keeping.',
   'Your friend to capture every moment.': 'Your friend to capture every moment.',
-  'Teman Camera adalah usaha penyewaan kamera yang hadir untuk menjadi teman dalam mengabadikan berbagai momen.': 'Teman Camera is a camera rental business here to help you capture life’s moments.',
+  'temankamera_ adalah usaha penyewaan kamera yang hadir untuk menjadi teman dalam mengabadikan berbagai momen.': 'temankamera_ is a camera rental business here to help you capture life’s moments.',
   'Mulai dari liburan, acara, content creation, hingga kebutuhan dokumentasi pribadi, kami menyediakan pilihan kamera yang dapat disesuaikan dengan kebutuhan kamu.': 'From holidays and events to content creation and personal projects, find a camera to fit your needs.',
   'Kami ingin membuat pengalaman sewa kamera menjadi lebih mudah, praktis, dan menyenangkan. Kamu bisa melihat harga di katalog, lalu menanyakan ketersediaan tanggal melalui WhatsApp.': 'We make renting a camera easy and enjoyable. Browse prices in the catalog, then ask us about your dates on WhatsApp.',
   'Jelajahi Katalog': 'Browse the Catalog', 'Yang kami jaga': 'What matters to us',
   'Hangat, jelas, dan praktis': 'Friendly, clear, and easy',
   'Informasi harga tersedia di katalog dan ketentuan sewa dapat dibaca sebelum booking.': 'Prices are listed in the catalog, and rental terms are available before booking.',
-  'Klien telah mempercayakan momen mereka kepada Teman Camera.': 'Customers have trusted Teman Camera with their moments.',
+  'Klien telah mempercayakan momen mereka kepada temankamera_.': 'Customers have trusted temankamera_ with their moments.',
   'Siap membantu memilih kamera.': 'Here to help you choose a camera.',
   'Harga sewa ditampilkan di katalog.': 'Rental prices are listed in the catalog.',
   'Kamera untuk cerita yang ingin kamu simpan.': 'Cameras for stories you want to keep.',
-  'Kenapa TEMAN CAMERA?': 'Why TEMAN CAMERA?', 'Friendly': 'Friendly', 'Transparan': 'Transparent',
+  'Kenapa temankamera_?': 'Why temankamera_?', 'Friendly': 'Friendly', 'Transparan': 'Transparent',
   'Teman momen': 'Your moment companion', 'Kami siap ngobrol': 'Let’s talk',
-  'Kontak & Booking': 'Contact & Booking', 'Tanyakan ketersediaan kamera atau detail proses sewa kepada Teman Camera.': 'Ask us about camera availability or rental details.',
+  'Kontak & Booking': 'Contact & Booking', 'Tanyakan ketersediaan kamera atau detail proses sewa kepada temankamera_.': 'Ask temankamera_ about camera availability or rental details.',
   'Semudah itu': 'It’s that easy', 'Cara Booking': 'How to Book',
   'Mulai percakapan, lalu bersiap mengabadikan momenmu.': 'Start a chat, then get ready to capture your moments.',
   'Pilih kamera': 'Choose a camera', 'Cari yang cocok di katalog.': 'Find one in the catalog.',
   'Cek tanggal': 'Check your dates', 'Tanya ketersediaan melalui WhatsApp.': 'Ask about availability on WhatsApp.',
   'Konfirmasi booking': 'Confirm your booking', 'Ikuti rules dan format sewa.': 'Follow the rental rules and booking steps.',
   'Ambil kameramu': 'Pick up your camera', 'Kamera siap menemani ceritamu.': 'Your camera is ready for the story.',
-  'Mulai dari sini': 'Get in touch', 'Hubungi Teman Camera': 'Contact Teman Camera',
+  'Mulai dari sini': 'Get in touch', 'Hubungi temankamera_': 'Contact temankamera_',
   'Kirim pesan untuk cek jadwal dan mulai proses booking. Ketersediaan bergantung pada tanggal rental.': 'Message us to check dates and start your booking. Availability depends on your rental dates.',
   'Booking dan cek ketersediaan dilakukan melalui chat WhatsApp.': 'Book and check availability through WhatsApp.',
-  'Ikuti cerita dan kabar dari Teman Camera.': 'Follow Teman Camera for updates and stories.',
-  'Lihat cerita Teman Camera di TikTok.': 'See Teman Camera stories on TikTok.',
+  'Ikuti cerita dan kabar dari temankamera_.': 'Follow temankamera_ for updates and stories.',
+  'Lihat cerita temankamera_ di TikTok.': 'See temankamera_ stories on TikTok.',
   'Opsi COD': 'Meet-up options', 'Area pengambilan': 'Pickup locations',
   'Pilihan titik COD yang tersedia sesuai rules sewa.': 'Available meet-up points are listed in the rental terms.',
   'Cibubur': 'Cibubur', 'Bekasi': 'Bekasi', 'Baca Rules Sewa sebelum booking →': 'Read the rental terms before booking →',
   'Lebih banyak cara menyimpan cerita': 'More ways to keep your memories', 'Layanan Kami': 'Our Services',
   'Dari kamera dan foto instan sampai bantuan tambahan untuk momenmu.': 'From cameras and instant photos to helpful extras for your moments.',
   'Teman untuk setiap momen': 'A friend for every moment', 'Pilihan layanan': 'Services',
-  'Harga tambahan mengikuti pricelist Teman Camera.': 'Prices follow the Teman Camera price list.',
+  'Harga tambahan mengikuti pricelist temankamera_.': 'Prices follow the temankamera_ price list.',
   'Camera only': 'Camera only', '1 pack': '1 pack', 'Putih polos, 1 pack': 'Plain white, 1 pack',
   'Per layanan': 'Per service', 'Pengambilan & pengiriman': 'Pickup & delivery',
   'Pilih cara yang nyaman': 'Choose what works for you',
@@ -115,9 +115,9 @@ const englishText = {
   'Jam buka': 'Opening hours', 'Cek ketersediaan': 'Check availability', 'Bahasa': 'Language',
   'Harga kamera': 'Camera prices', 'Cara booking': 'How to book', 'Jam buka': 'Opening hours', 'Area COD': 'Pickup areas',
   'Tulis pertanyaan...': 'Type your question...', 'Kirim': 'Send', 'Tutup chat': 'Close chat',
-  'Chat dengan Teman Camera': 'Chat with Teman Camera', 'Info rental kamera': 'Rental help',
-  'Hai! Aku asisten Teman Camera. Tanyakan harga, booking, jam buka, atau area layanan.': 'Hi! I’m the Teman Camera assistant. Ask me about prices, bookings, opening hours, or service areas.',
-  'Hai! Aku Teman Camera Assistant. Ada yang bisa kubantu?': 'Hi! I’m the Teman Camera assistant. How can I help?',
+  'Chat dengan temankamera_': 'Chat with temankamera_', 'Info rental kamera': 'Rental help',
+  'Hai! Aku asisten temankamera_. Tanyakan harga, booking, jam buka, atau area layanan.': 'Hi! I’m the temankamera_ assistant. Ask me about prices, bookings, opening hours, or service areas.',
+  'Hai! Aku temankamera_ Assistant. Ada yang bisa kubantu?': 'Hi! I’m the temankamera_ assistant. How can I help?',
   'Saya belum punya detail itu. Tim kami bisa bantu lewat WhatsApp.': 'I don’t have that detail yet. Our team can help on WhatsApp.',
   'Buka WhatsApp': 'Continue on WhatsApp', 'Harga kamera 24 jam / 48 jam:': 'Camera prices for 24 / 48 hours:',
   'Untuk booking, pilih kamera lalu hubungi kami untuk cek tanggal. DP 50% mengunci tanggal; pelunasan saat pengambilan.': 'To book, choose a camera and ask us to check your dates. A 50% deposit secures the booking; the balance is due at pickup.',
@@ -201,14 +201,14 @@ function setLanguage(language) {
   const chatInput = document.querySelector('.chat-input');
   if (chatInput) chatInput.placeholder = language === 'en' ? 'Type your question...' : 'Tulis pertanyaan...';
   const titleTranslations = {
-    'TEMAN CAMERA — Your friend to capture every moment': 'TEMAN CAMERA — Your friend to capture every moment',
-    'Katalog Rental Kamera — TEMAN CAMERA': 'Camera Rentals — TEMAN CAMERA',
-    'Layanan Kami — TEMAN CAMERA': 'Our Services — TEMAN CAMERA',
-    'Galeri Testimoni — TEMAN CAMERA': 'Customer Gallery — TEMAN CAMERA',
-    'Rules Sewa — TEMAN CAMERA': 'Rental Terms — TEMAN CAMERA',
-    'Tentang Kami — TEMAN CAMERA': 'About Us — TEMAN CAMERA',
-    'Kontak & Booking — TEMAN CAMERA': 'Contact & Booking — TEMAN CAMERA',
-    'Detail Produk — TEMAN CAMERA': 'Product Details — TEMAN CAMERA'
+    'temankamera_ — Your friend to capture every moment': 'temankamera_ — Your friend to capture every moment',
+    'Katalog Rental Kamera — temankamera_': 'Camera Rentals — temankamera_',
+    'Layanan Kami — temankamera_': 'Our Services — temankamera_',
+    'Galeri Testimoni — temankamera_': 'Customer Gallery — temankamera_',
+    'Rules Sewa — temankamera_': 'Rental Terms — temankamera_',
+    'Tentang Kami — temankamera_': 'About Us — temankamera_',
+    'Kontak & Booking — temankamera_': 'Contact & Booking — temankamera_',
+    'Detail Produk — temankamera_': 'Product Details — temankamera_'
   };
   document.title = language === 'en' ? titleTranslations[initialPageTitle] || initialPageTitle : initialPageTitle;
 }
@@ -229,7 +229,7 @@ function getAssistantReply(question) {
       : 'Pilih kamera, hubungi kami untuk cek tanggal melalui WhatsApp, lalu ikuti rules sewa. DP 50% mengunci tanggal; pelunasan dilakukan saat pengambilan.';
   }
   if (/jam|buka|open|hours/.test(query)) {
-    return currentLanguage === 'en' ? 'We are open daily from 10:00 to 22:00.' : 'Teman Camera buka pukul 10.00–22.00.';
+    return currentLanguage === 'en' ? 'temankamera_ is open daily from 10:00 to 22:00.' : 'temankamera_ buka pukul 10.00–22.00.';
   }
   if (/lokasi|area|cod|pickup|pick up|delivery|antar|cibubur|bekasi/.test(query)) {
     return currentLanguage === 'en'
@@ -248,7 +248,7 @@ function getAssistantReply(question) {
   }
   return currentLanguage === 'en'
     ? 'I don’t have that detail yet. Our team can help you on WhatsApp.'
-    : 'Aku belum punya detail itu. Tim Teman Camera bisa bantu lewat WhatsApp.';
+    : 'Aku belum punya detail itu. Tim temankamera_ bisa bantu lewat WhatsApp.';
 }
 
 function renderChatWidget() {
@@ -256,12 +256,12 @@ function renderChatWidget() {
   const widget = document.createElement('div');
   widget.className = 'chat-widget';
   widget.innerHTML = `
-    <section class="chat-panel" aria-label="Chat Teman Camera" hidden>
-      <header class="chat-header"><img src="${root}/aset/logo%20temankamera.jpeg" alt=""><div><strong>Teman Camera Assistant</strong><small>Info rental kamera</small></div><button class="chat-close" type="button" aria-label="Tutup chat">×</button></header>
+    <section class="chat-panel" aria-label="Chat temankamera_" hidden>
+      <header class="chat-header"><img src="${root}/aset/logo%20temankamera.jpeg" alt=""><div><strong>temankamera_ Assistant</strong><small>Info rental kamera</small></div><button class="chat-close" type="button" aria-label="Tutup chat">×</button></header>
       <div class="chat-messages" role="log" aria-live="polite"><p class="chat-message chat-message-bot" data-chat-greeting></p><div class="chat-prompts"><button type="button" data-chat-prompt="harga">Harga kamera</button><button type="button" data-chat-prompt="booking">Cara booking</button><button type="button" data-chat-prompt="jam buka">Jam buka</button><button type="button" data-chat-prompt="area COD">Area COD</button></div></div>
       <form class="chat-form"><label class="visually-hidden" for="chat-question">Pertanyaan</label><input class="chat-input" id="chat-question" name="question" autocomplete="off" placeholder="Tulis pertanyaan..." required><button type="submit" aria-label="Kirim">➤</button></form>
     </section>
-    <button class="chat-launch" type="button" aria-label="Chat dengan Teman Camera" aria-expanded="false"><img src="${root}/aset/logo%20temankamera.jpeg" alt=""><span>Chat</span></button>`;
+    <button class="chat-launch" type="button" aria-label="Chat dengan temankamera_" aria-expanded="false"><img src="${root}/aset/logo%20temankamera.jpeg" alt=""><span>Chat</span></button>`;
   document.body.append(widget);
 
   const panel = widget.querySelector('.chat-panel');
@@ -298,7 +298,7 @@ function renderChatWidget() {
     appendMessage(answer, 'bot', unknown);
   };
 
-  widget.querySelector('[data-chat-greeting]').textContent = 'Hai! Aku asisten Teman Camera. Tanyakan harga, booking, jam buka, atau area layanan.';
+  widget.querySelector('[data-chat-greeting]').textContent = 'Hai! Aku asisten temankamera_. Tanyakan harga, booking, jam buka, atau area layanan.';
   launcher.addEventListener('click', () => setOpen(panel.hidden));
   widget.querySelector('.chat-close').addEventListener('click', () => setOpen(false));
   widget.querySelector('.chat-form').addEventListener('submit', (event) => {
@@ -312,8 +312,8 @@ function renderChatWidget() {
 
 function whatsappUrl(productName = '') {
   const message = productName
-    ? `Halo Teman Camera! Saya ingin menyewa ${productName}. Apakah tersedia untuk tanggal yang saya inginkan?`
-    : 'Halo Teman Camera! Saya ingin bertanya tentang ketersediaan dan proses booking.';
+    ? `Halo temankamera_! Saya ingin menyewa ${productName}. Apakah tersedia untuk tanggal yang saya inginkan?`
+    : 'Halo temankamera_! Saya ingin bertanya tentang ketersediaan dan proses booking.';
   const number = WHATSAPP_NUMBER.replace(/\D/g, '');
   const destination = number
     ? `https://wa.me/${number}?text=${encodeURIComponent(message)}`
@@ -323,8 +323,8 @@ function whatsappUrl(productName = '') {
 
 function assistantWhatsAppUrl() {
   const message = currentLanguage === 'en'
-    ? 'Hello Teman Camera! I have a question about renting a camera.'
-    : 'Halo Teman Camera! Saya ingin bertanya tentang penyewaan kamera.';
+    ? 'Hello temankamera_! I have a question about renting a camera.'
+    : 'Halo temankamera_! Saya ingin bertanya tentang penyewaan kamera.';
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
@@ -377,7 +377,7 @@ function renderFooter() {
       <div class="footer-main">
         <div><a class="brand footer-brand" href="${root}/index.html"><span class="brand-mark"><img src="${root}/aset/logo%20temankamera.jpeg" alt=""></span><span>temankamera_</span></a><p class="footer-tagline">Your friend to capture every moment.</p></div>
         <ul class="footer-links" aria-label="Navigasi footer"><li><a href="${root}/index.html">Home</a></li><li><a href="${pagePath('katalog')}">Katalog</a></li><li><a href="${pagePath('layanan')}">Layanan Kami</a></li><li><a href="${pagePath('galeri')}">Galeri Testimoni</a></li><li><a href="${pagePath('rules')}">Rules Sewa</a></li><li><a href="${pagePath('tentang')}">Tentang Kami</a></li><li><a href="${pagePath('kontak')}">Kontak</a></li></ul>
-        <div class="footer-social"><strong>Ikuti cerita kami</strong><div class="social-links"><a class="social-link" href="${whatsappUrl()}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Teman Camera"><img src="${root}/aset/LOGO%20WA.jpg" alt=""><span>WhatsApp</span></a><a class="social-link" href="https://www.instagram.com/temankamera_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @temankamera_"><img src="${root}/aset/LOGO%20IG.jpg" alt=""><span>Instagram</span></a><a class="social-link" href="https://www.tiktok.com/@temankamera_" target="_blank" rel="noopener noreferrer" aria-label="TikTok @temankamera_"><img src="${root}/aset/LOGO%20TIKTOK.jpg" alt=""><span>TikTok</span></a></div></div>
+        <div class="footer-social"><strong>Ikuti cerita kami</strong><div class="social-links"><a class="social-link" href="${whatsappUrl()}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp temankamera_"><img src="${root}/aset/LOGO%20WA.jpg" alt=""><span>WhatsApp</span></a><a class="social-link" href="https://www.instagram.com/temankamera_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @temankamera_"><img src="${root}/aset/LOGO%20IG.jpg" alt=""><span>Instagram</span></a><a class="social-link" href="https://www.tiktok.com/@temankamera_" target="_blank" rel="noopener noreferrer" aria-label="TikTok @temankamera_"><img src="${root}/aset/LOGO%20TIKTOK.jpg" alt=""><span>TikTok</span></a></div></div>
       </div>
       <div class="footer-bottom"><p>© ${new Date().getFullYear()} temankamera_</p><p>Your friend to capture every moment.</p></div>
     </div>`;
@@ -385,7 +385,7 @@ function renderFooter() {
 
 function productCard(product) {
   const isCamera = product.category === 'kamera';
-  const photo = isCamera
+  const photo = product.image
     ? `<img src="${root}/PRODUK%20YANG%20DI%20SEWA/${encodeURIComponent(product.image)}" alt="${product.name}" loading="lazy">`
     : `<span class="no-photo-tile" aria-hidden="true">${product.visual}</span>`;
   const secondPrice = isCamera ? `<div class="price-line"><span>48 Jam</span><strong>${money.format(product.price48)}</strong></div>` : '';
@@ -436,13 +436,13 @@ function renderProductDetail() {
   }
 
   const isCamera = product.category === 'kamera';
-  const image = isCamera
+  const image = product.image
     ? `<img src="${root}/PRODUK%20YANG%20DI%20SEWA/${encodeURIComponent(product.image)}" alt="${product.name}">`
     : `<span class="no-photo-tile">${product.visual}</span>`;
   const priceRows = isCamera
     ? `<div class="price-line"><span>24 Jam</span><strong>${money.format(product.price24)}</strong></div><div class="price-line"><span>48 Jam</span><strong>${money.format(product.price48)}</strong></div>`
     : `<div class="price-line"><span>${product.note || 'Harga'}</span><strong>${money.format(product.price24)}</strong></div>`;
-  target.innerHTML = `<div class="detail-layout"><div class="detail-photo">${image}</div><div class="detail-copy"><span class="product-kind">${isCamera ? 'Kamera' : 'Accessories'}</span><h1>${product.name}</h1><p>${isCamera ? 'Pilihan kamera rental Teman Camera. Tanyakan ketersediaan untuk tanggal yang kamu inginkan.' : 'Layanan atau perlengkapan tambahan dari Teman Camera. Hubungi kami untuk menanyakan detail dan ketersediaannya.'}</p><div class="detail-price">${priceRows}</div><div class="detail-spec"><h2>Durasi / detail</h2><p>${isCamera ? 'Pilihan durasi 24 jam atau 48 jam.' : product.note || 'Konfirmasi detail saat booking.'}</p></div><div class="detail-spec"><h2>Isi paket</h2><p>Konfirmasi kelengkapan paket saat booking melalui WhatsApp.</p></div><div class="detail-spec"><h2>Syarat sewa</h2><p>Baca rules sewa lengkap sebelum booking.</p></div><div class="detail-actions"><a class="button button-primary" data-booking="${product.name}" href="${whatsappUrl(product.name)}">Booking via WhatsApp ↗</a><a class="button button-secondary" href="${pagePath('rules')}">Baca Rules</a></div></div></div>`;
+  target.innerHTML = `<div class="detail-layout"><div class="detail-photo">${image}</div><div class="detail-copy"><span class="product-kind">${isCamera ? 'Kamera' : 'Accessories'}</span><h1>${product.name}</h1><p>${isCamera ? 'Pilihan kamera rental temankamera_. Tanyakan ketersediaan untuk tanggal yang kamu inginkan.' : 'Layanan atau perlengkapan tambahan dari temankamera_. Hubungi kami untuk menanyakan detail dan ketersediaannya.'}</p><div class="detail-price">${priceRows}</div><div class="detail-spec"><h2>Durasi / detail</h2><p>${isCamera ? 'Pilihan durasi 24 jam atau 48 jam.' : product.note || 'Konfirmasi detail saat booking.'}</p></div><div class="detail-spec"><h2>Isi paket</h2><p>Konfirmasi kelengkapan paket saat booking melalui WhatsApp.</p></div><div class="detail-spec"><h2>Syarat sewa</h2><p>Baca rules sewa lengkap sebelum booking.</p></div><div class="detail-actions"><a class="button button-primary" data-booking="${product.name}" href="${whatsappUrl(product.name)}">Booking via WhatsApp ↗</a><a class="button button-secondary" href="${pagePath('rules')}">Baca Rules</a></div></div></div>`;
 }
 
 function renderCustomerGallery() {
@@ -457,7 +457,7 @@ function renderCustomerGallery() {
 
   gallery.innerHTML = images.map((filename, index) => {
     const source = `${root}/Galery/${encodeURIComponent(filename)}`;
-    return `<figure class="gallery-photo"><img src="${source}" alt="Foto pelanggan Teman Camera ${index + 1}" loading="lazy" decoding="async"></figure>`;
+    return `<figure class="gallery-photo"><img src="${source}" alt="Foto pelanggan temankamera_ ${index + 1}" loading="lazy" decoding="async"></figure>`;
   }).join('');
   const count = document.querySelector('[data-gallery-count]');
   if (count) count.textContent = images.length;
