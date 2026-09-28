@@ -403,6 +403,9 @@ function renderProducts() {
   const featured = document.querySelector('[data-featured-products]');
   if (featured) featured.innerHTML = cameraProducts.slice(0, 3).map(productCard).join('');
 
+  const services = document.querySelector('[data-service-products]');
+  if (services) services.innerHTML = extraProducts.map(productCard).join('');
+
   const catalog = document.querySelector('[data-catalog-products]');
   if (!catalog) return;
   catalog.innerHTML = products.map(productCard).join('');

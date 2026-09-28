@@ -123,7 +123,6 @@ h3 { margin-bottom: 9px; font-size: 1.1rem; }
 .empty-state { padding: 36px 20px; border: 1px dashed #cbd8c8; border-radius: 14px; color: var(--muted); text-align: center; }
 .empty-state[hidden] { display: none; }
 .service-icon { height: 175px; display: grid; place-items: center; background: var(--pink-pale); color: var(--green); font-family: var(--display); font-size: 3.5rem; }
-.service-icon-image { width: 100%; padding: 16px; object-fit: contain; }
 .service-card:nth-child(3n + 2) .service-icon { background: var(--sage-light); }
 .service-card .product-body h3 { min-height: 2.25em; }
 .service-card .button { width: 100%; }
