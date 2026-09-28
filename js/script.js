@@ -343,7 +343,7 @@ function renderNavigation() {
   const current = location.pathname.split('/').pop() || 'index.html';
   header.innerHTML = `
     <nav class="nav-shell" aria-label="Navigasi utama">
-      <a class="brand" href="${root}/index.html" aria-label="TEMAN CAMERA, ke halaman utama"><span class="brand-mark"><img src="${root}/aset/logo%20temankamera.jpeg" alt=""></span><span>TEMAN CAMERA</span></a>
+      <a class="brand" href="${root}/index.html" aria-label="temankamera_, ke halaman utama"><span class="brand-mark"><img src="${root}/aset/logo%20temankamera.jpeg" alt=""></span><span>temankamera_</span></a>
       <div class="nav-controls"><div class="language-switch" role="group" aria-label="Bahasa"><button type="button" data-language-choice="id" aria-pressed="true">ID</button><button type="button" data-language-choice="en" aria-pressed="false">EN</button></div><button class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="main-menu"><span aria-hidden="true">☰</span></button></div>
       <ul class="nav-links" id="main-menu">${links.map(([label, href, file]) => `<li><a href="${href}"${current === file ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}<li><a class="mobile-book" data-booking href="${whatsappUrl()}">Booking Sekarang</a></li></ul>
       <a class="button button-primary nav-book" data-booking href="${whatsappUrl()}">Booking Sekarang <span aria-hidden="true">↗</span></a>
@@ -375,11 +375,11 @@ function renderFooter() {
   footer.innerHTML = `
     <div class="page-wrap">
       <div class="footer-main">
-        <div><a class="brand footer-brand" href="${root}/index.html"><span class="brand-mark"><img src="${root}/aset/logo%20temankamera.jpeg" alt=""></span><span>TEMAN CAMERA</span></a><p class="footer-tagline">Your friend to capture every moment.</p></div>
+        <div><a class="brand footer-brand" href="${root}/index.html"><span class="brand-mark"><img src="${root}/aset/logo%20temankamera.jpeg" alt=""></span><span>temankamera_</span></a><p class="footer-tagline">Your friend to capture every moment.</p></div>
         <ul class="footer-links" aria-label="Navigasi footer"><li><a href="${root}/index.html">Home</a></li><li><a href="${pagePath('katalog')}">Katalog</a></li><li><a href="${pagePath('layanan')}">Layanan Kami</a></li><li><a href="${pagePath('galeri')}">Galeri Testimoni</a></li><li><a href="${pagePath('rules')}">Rules Sewa</a></li><li><a href="${pagePath('tentang')}">Tentang Kami</a></li><li><a href="${pagePath('kontak')}">Kontak</a></li></ul>
         <div class="footer-social"><strong>Ikuti cerita kami</strong><div class="social-links"><a class="social-link" href="${whatsappUrl()}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Teman Camera"><img src="${root}/aset/LOGO%20WA.jpg" alt=""><span>WhatsApp</span></a><a class="social-link" href="https://www.instagram.com/temankamera_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @temankamera_"><img src="${root}/aset/LOGO%20IG.jpg" alt=""><span>Instagram</span></a><a class="social-link" href="https://www.tiktok.com/@temankamera_" target="_blank" rel="noopener noreferrer" aria-label="TikTok @temankamera_"><img src="${root}/aset/LOGO%20TIKTOK.jpg" alt=""><span>TikTok</span></a></div></div>
       </div>
-      <div class="footer-bottom"><p>© ${new Date().getFullYear()} TEMAN CAMERA</p><p>Your friend to capture every moment.</p></div>
+      <div class="footer-bottom"><p>© ${new Date().getFullYear()} temankamera_</p><p>Your friend to capture every moment.</p></div>
     </div>`;
 }
 
