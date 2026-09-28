@@ -115,7 +115,9 @@ const englishText = {
   'Jam buka': 'Opening hours', 'Cek ketersediaan': 'Check availability', 'Bahasa': 'Language',
   'Harga kamera': 'Camera prices', 'Cara booking': 'How to book', 'Jam buka': 'Opening hours', 'Area COD': 'Pickup areas',
   'Tulis pertanyaan...': 'Type your question...', 'Kirim': 'Send', 'Tutup chat': 'Close chat',
-  'Chat dengan Teman Camera': 'Chat with Teman Camera', 'Hai! Aku Teman Camera Assistant. Ada yang bisa kubantu?': 'Hi! I’m the Teman Camera assistant. How can I help?',
+  'Chat dengan Teman Camera': 'Chat with Teman Camera', 'Info rental kamera': 'Rental help',
+  'Hai! Aku asisten Teman Camera. Tanyakan harga, booking, jam buka, atau area layanan.': 'Hi! I’m the Teman Camera assistant. Ask me about prices, bookings, opening hours, or service areas.',
+  'Hai! Aku Teman Camera Assistant. Ada yang bisa kubantu?': 'Hi! I’m the Teman Camera assistant. How can I help?',
   'Saya belum punya detail itu. Tim kami bisa bantu lewat WhatsApp.': 'I don’t have that detail yet. Our team can help on WhatsApp.',
   'Buka WhatsApp': 'Continue on WhatsApp', 'Harga kamera 24 jam / 48 jam:': 'Camera prices for 24 / 48 hours:',
   'Untuk booking, pilih kamera lalu hubungi kami untuk cek tanggal. DP 50% mengunci tanggal; pelunasan saat pengambilan.': 'To book, choose a camera and ask us to check your dates. A 50% deposit secures the booking; the balance is due at pickup.',
@@ -168,7 +170,9 @@ function setLanguage(language) {
 function getAssistantReply(question) {
   const query = question.toLowerCase();
   if (/harga|price|biaya|cost|tarif/.test(query)) {
-    const rows = cameraProducts.map((product) => `${product.name}: ${money.format(product.price24)} / 24 jam, ${money.format(product.price48)} / 48 jam`);
+    const duration24 = currentLanguage === 'en' ? '24 hours' : '24 jam';
+    const duration48 = currentLanguage === 'en' ? '48 hours' : '48 jam';
+    const rows = cameraProducts.map((product) => `${product.name}: ${money.format(product.price24)} / ${duration24}, ${money.format(product.price48)} / ${duration48}`);
     return currentLanguage === 'en'
       ? `Camera prices (24 / 48 hours):\n${rows.join('\n')}`
       : `Harga kamera (24 / 48 jam):\n${rows.join('\n')}`;
@@ -248,9 +252,7 @@ function renderChatWidget() {
     appendMessage(answer, 'bot', unknown);
   };
 
-  widget.querySelector('[data-chat-greeting]').textContent = currentLanguage === 'en'
-    ? 'Hi! I’m the Teman Camera assistant. Ask me about prices, booking, hours, or service areas.'
-    : 'Hai! Aku asisten Teman Camera. Tanyakan harga, booking, jam buka, atau area layanan.';
+  widget.querySelector('[data-chat-greeting]').textContent = 'Hai! Aku asisten Teman Camera. Tanyakan harga, booking, jam buka, atau area layanan.';
   launcher.addEventListener('click', () => setOpen(panel.hidden));
   widget.querySelector('.chat-close').addEventListener('click', () => setOpen(false));
   widget.querySelector('.chat-form').addEventListener('submit', (event) => {
