@@ -259,7 +259,7 @@ body.gallery-lightbox-open { overflow: hidden; }
 .footer-bottom p { margin: 0; }
 
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
-.chat-widget { position: fixed; z-index: 60; right: 22px; bottom: 52px; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.chat-widget { position: fixed; z-index: 60; right: 22px; bottom: 88px; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
 .chat-launch { min-height: 58px; display: inline-flex; align-items: center; gap: 9px; padding: 7px 16px 7px 7px; border: 1px solid rgba(255,255,255,.8); border-radius: 999px; background: var(--green-deep); box-shadow: 0 9px 26px rgba(39,59,43,.23); color: white; font-weight: 700; cursor: pointer; }
 .chat-launch:hover { background: #263c2b; }
 .chat-launch img { width: 42px; height: 42px; flex: 0 0 42px; border-radius: 50%; background: white; object-fit: contain; }
