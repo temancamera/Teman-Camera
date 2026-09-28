@@ -49,9 +49,10 @@ h3 { margin-bottom: 9px; font-size: 1.1rem; }
 .text-link { color: var(--green-deep); font-weight: 700; text-decoration: underline; text-decoration-color: #a9c0a4; text-underline-offset: 4px; }
 .center-action { margin-top: 27px; text-align: center; }
 
-.site-header { position: sticky; z-index: 30; top: 0; border-bottom: 1px solid rgba(52,75,57,.1); background: rgba(255,250,241,.95); backdrop-filter: blur(14px); }
+.site-header { position: sticky; z-index: 30; top: 0; border-bottom: 1px solid rgba(52,75,57,.1); background: url("../aset/bg%20logo.jpg") center / cover no-repeat; box-shadow: 0 3px 14px rgba(34,51,38,.18); backdrop-filter: blur(14px); }
 .nav-shell { position: relative; width: min(1160px, calc(100% - 48px)); min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-inline: auto; }
 .brand { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 10px; color: var(--green-deep); font-size: .96rem; font-weight: 700; letter-spacing: .03em; }
+.site-header .brand { color: #263c2b; text-shadow: 0 1px 2px rgba(255,255,255,.98), 0 0 8px rgba(255,255,255,.82); }
 .brand-mark { width: 38px; height: 38px; display: grid; flex: 0 0 38px; place-items: center; overflow: hidden; border: 1px solid rgba(52,75,57,.1); border-radius: 50%; background: var(--sage); }
 .brand-mark img { width: 32px; height: 32px; min-width: 0; min-height: 0; padding: 1px; border-radius: 50%; object-fit: contain; object-position: center center; }
 .nav-links { position: absolute; z-index: 5; top: calc(100% + 1px); right: 0; width: min(320px, calc(100vw - 36px)); display: none; flex-direction: column; align-items: stretch; gap: 0; margin: 0; padding: 9px 15px 15px; border: 1px solid var(--line); border-radius: 0 0 14px 14px; background: var(--cream); box-shadow: 0 14px 24px rgba(50,72,52,.12); list-style: none; }
@@ -165,6 +166,9 @@ h3 { margin-bottom: 9px; font-size: 1.1rem; }
 .page-hero .page-wrap { max-width: 800px; }
 .gallery-section { background: var(--cream); }
 .gallery-grid { columns: 4 220px; column-gap: 15px; }
+.camera-shot-group { padding: 24px 0; border-top: 1px solid var(--line); }
+.camera-shot-group h2 { margin-bottom: 14px; font-size: 1.7rem; }
+.camera-shot-empty { min-height: 76px; display: grid; place-items: center; margin-bottom: 0; padding: 16px; border: 1px dashed var(--line); border-radius: 8px; background: var(--sage-light); color: var(--muted); text-align: center; }
 .gallery-photo { display: inline-block; width: 100%; margin: 0 0 15px; overflow: hidden; break-inside: avoid; border: 1px solid #e5e7dd; border-radius: 13px; background: var(--paper); box-shadow: 0 7px 18px rgba(50,72,52,.07); }
 .gallery-photo img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; transition: transform .25s ease; }
 .gallery-photo:hover img { transform: scale(1.025); }

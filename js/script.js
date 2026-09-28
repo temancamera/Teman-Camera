@@ -5,17 +5,19 @@ const cameraProducts = [
   { id: 'canon-m100', name: 'Canon M100', category: 'kamera', image: 'canon-m100-24-jam-180k-48-jam-360k.jpeg', price24: 180000, price48: 360000 },
   { id: 'canon-a2500', name: 'Canon A2500', category: 'kamera', image: 'canon-a2500-24-jam-95k-48-jam-180k.jpeg', price24: 95000, price48: 180000 },
   { id: 'fujifilm-x-a5', name: 'Fujifilm X-A5', category: 'kamera', image: 'fujifilm-x-a5-24-jam-170k-48-jam-335k.jpeg', price24: 170000, price48: 335000 },
-  { id: 'sony-dsc-w830', name: 'Sony DSC W830', category: 'kamera', image: 'sony-dsc-w830-24-jam-165k-48-jam-165k.jpeg', price24: 165000, price48: 165000 },
+  { id: 'sony-dsc-w510', name: 'Sony DSC W510', category: 'kamera', image: 'sony-dsc-w510-24-jam-85k-48-jam-165k.jpeg', price24: 85000, price48: 165000 },
   { id: 'olympus-tg-320', name: 'Olympus TG 320', category: 'kamera', image: 'olympus-tg-320-24-jam-75k-48-jam-145k.jpeg', price24: 75000, price48: 145000 },
   { id: 'fujifilm-x-a3', name: 'Fujifilm X-A3', category: 'kamera', image: 'fujifilm-x-a3-24-jam-150k-48-jam-295k.jpeg', price24: 150000, price48: 295000 }
 ];
 
+const cameraShotImages = Object.fromEntries(cameraProducts.map((product) => [product.id, []]));
+
 const extraProducts = [
-  { id: 'instax-mini-13', name: 'Instax Mini 13', category: 'accessories', note: 'Camera only', price24: 35000, image: 'instax-mini-13-35k.jpeg', visual: 'INSTAX' },
-  { id: 'paper-refill-putih', name: 'Paper Refill Fuji Polaroid', category: 'accessories', note: '5 pack', price24: 170000, image: 'paper-refill-fuji-polaroid-5-pack-170k.jpg', visual: 'PAPER' },
-  { id: 'instax-bundle', name: 'Bundling Kamera + Paper Polaroid', category: 'accessories', note: '1 pack', price24: 210000, image: 'bundling-kamera-paper-polaroid-1-pack-210k.jpg', visual: 'BUNDLE' },
+  { id: 'instax-mini-13', name: 'Instax Mini 13', category: 'accessories', note: 'Camera only', price24: 45000, image: 'instax-mini-13-45k.jpeg', visual: 'INSTAX' },
+  { id: 'paper-refill-putih', name: 'Paper Refill Fuji Polaroid', category: 'accessories', note: '1 pack', price24: 170000, image: 'paper-refill-fuji-polaroid-1-pack-170k.jpg', visual: 'PAPER' },
+  { id: 'instax-bundle', name: 'Bundling Kamera + Paper Polaroid', category: 'accessories', note: '1 pack', price24: 210000, image: 'bundling-kamera-paper-polaroid-1-pack-210k.jpeg', visual: 'BUNDLE' },
   { id: 'jasa-pindahan-foto', name: 'Jasa Pindahan Foto', category: 'accessories', price24: 15000, visual: 'TRANSFER' },
-  { id: 'type-c-lighting', name: 'Type-C Lighting', category: 'accessories', price24: 20000, visual: 'LIGHT' }
+  { id: 'type-c-lighting', name: 'Type-C Lighting', category: 'accessories', price24: 20000, image: 'type-c-lighting-1-20k.JPG', visual: 'LIGHT' }
 ];
 
 const galleryImageSets = [
@@ -37,7 +39,7 @@ let currentLanguage = 'id';
 const originalTextNodes = new WeakMap();
 
 const englishText = {
-  'Katalog': 'Catalog', 'Layanan Kami': 'Our Services', 'Galeri Testimoni': 'Customer Gallery',
+  'Katalog': 'Catalog', 'Layanan Kami': 'Our Services', 'Galeri Testimoni': 'Customer Gallery', 'Hasil Jepretan': 'Photo Gallery',
   'Rules Sewa': 'Rental Terms', 'Tentang Kami': 'About Us', 'Kontak': 'Contact',
   'Booking Sekarang': 'Book Now', 'Buka menu': 'Open menu', 'Tutup menu': 'Close menu',
   'A little camera friend': 'Your camera friend', 'Teman baik untuk cerita yang tak terulang.': 'A friend for stories that happen only once.',
@@ -63,7 +65,8 @@ const englishText = {
   'Lihat Detail': 'View Details', 'Booking': 'Book', '24 Jam': '24 Hours', '48 Jam': '48 Hours',
   'Belum ada daftar lensa.': 'No lenses listed yet.', 'Belum ada produk di kategori ini.': 'No products in this category yet.',
   'Pilih produk dari katalog.': 'Choose a product from the catalog.', 'Kembali ke Katalog': 'Back to Catalog',
-  'Galeri Testimoni': 'Customer Gallery', 'Dari teman, untuk kenangan': 'From our customers, with love',
+  'Dari teman, untuk kenangan': 'From our customers, with love',
+  'Belum ada foto hasil jepretan untuk kamera ini.': 'No sample photos have been added for this camera yet.',
   'Foto momen yang dibagikan pelanggan temankamera_.': 'Moments shared by temankamera_ customers.',
   'Cerita dalam setiap frame': 'Stories in every frame', 'momen pelanggan': 'customer moments',
   'Terima kasih sudah mempercayakan momenmu kepada temankamera_.': 'Thank you for trusting temankamera_ with your moments.',
@@ -123,7 +126,7 @@ const englishText = {
   'Untuk booking, pilih kamera lalu hubungi kami untuk cek tanggal. DP 50% mengunci tanggal; pelunasan saat pengambilan.': 'To book, choose a camera and ask us to check your dates. A 50% deposit secures the booking; the balance is due at pickup.',
   'Jam buka 10.00–22.00.': 'We are open from 10:00 to 22:00.',
   'Area layanan Cibubur dan Bekasi. Tersedia COD, self pick up, dan self delivery.': 'We serve Cibubur and Bekasi, with meet-up, self-pickup, and self-delivery options.',
-  'Kami menyediakan Instax Mini 13, paper refill, bundling Instax, jasa pindahan foto, dan Type-C Lighting.': 'We offer the Instax Mini 13, paper refills, an Instax bundle, photo transfer, and Type-C lighting.',
+  'Kami menyediakan Instax Mini 13, Paper Refill Fuji Polaroid, Bundling Kamera + Paper Polaroid, jasa pindahan foto, dan Type-C Lighting.': 'We offer Instax Mini 13, Paper Refill Fuji Polaroid, Bundling Kamera + Paper Polaroid, photo transfer, and Type-C Lighting.',
   'Baca rules sewa di halaman Rules Sewa. Untuk detail lainnya, tim kami siap membantu lewat WhatsApp.': 'Read the rental terms on the Rental Terms page. Our team can help with anything else on WhatsApp.',
   'Ikuti cerita kami': 'Follow our stories', 'Area layanan': 'Service area', 'Opsi layanan': 'Service options',
   'Kontak & Booking': 'Contact & Booking', 'Rules Sewa': 'Rental Terms',
@@ -205,6 +208,7 @@ function setLanguage(language) {
     'Katalog Rental Kamera — temankamera_': 'Camera Rentals — temankamera_',
     'Layanan Kami — temankamera_': 'Our Services — temankamera_',
     'Galeri Testimoni — temankamera_': 'Customer Gallery — temankamera_',
+    'Hasil Jepretan — temankamera_': 'Photo Gallery — temankamera_',
     'Rules Sewa — temankamera_': 'Rental Terms — temankamera_',
     'Tentang Kami — temankamera_': 'About Us — temankamera_',
     'Kontak & Booking — temankamera_': 'Contact & Booking — temankamera_',
@@ -237,9 +241,12 @@ function getAssistantReply(question) {
       : 'Area layanan Cibubur dan Bekasi. Tersedia COD, self pick up, dan self delivery. Tanyakan lokasi serta detailnya melalui WhatsApp.';
   }
   if (/instax|paper|pindah|transfer|lighting|layanan|service|accessor/.test(query)) {
+    const serviceList = extraProducts.map(({ name, note, price24 }) =>
+      `${name}${note ? ` (${note})` : ''} (${money.format(price24)})`
+    );
     return currentLanguage === 'en'
-      ? 'Services include Instax Mini 13 (Rp45,000), plain Instax paper refill (Rp170,000), camera + paper bundle (Rp210,000), photo transfer (Rp15,000), and Type-C lighting (Rp20,000).'
-      : 'Layanan kami: Instax Mini 13 (Rp45.000), paper refill (Rp170.000), bundling kamera + paper (Rp210.000), jasa pindahan foto (Rp15.000), dan Type-C Lighting (Rp20.000).';
+      ? `Services include ${serviceList.join(', ')}.`
+      : `Layanan kami: ${serviceList.join(', ')}.`;
   }
   if (/rules|syarat|ketentuan|deposit|dp|denda|damage|return/.test(query)) {
     return currentLanguage === 'en'
@@ -257,11 +264,11 @@ function renderChatWidget() {
   widget.className = 'chat-widget';
   widget.innerHTML = `
     <section class="chat-panel" aria-label="Chat temankamera_" hidden>
-      <header class="chat-header"><img src="${root}/aset/logo%20temankamera.jpeg" alt=""><div><strong>temankamera_ Assistant</strong><small>Info rental kamera</small></div><button class="chat-close" type="button" aria-label="Tutup chat">×</button></header>
+      <header class="chat-header"><img src="${root}/aset/logo%20temankamera.PNG" alt=""><div><strong>temankamera_ Assistant</strong><small>Info rental kamera</small></div><button class="chat-close" type="button" aria-label="Tutup chat">×</button></header>
       <div class="chat-messages" role="log" aria-live="polite"><p class="chat-message chat-message-bot" data-chat-greeting></p><div class="chat-prompts"><button type="button" data-chat-prompt="harga">Harga kamera</button><button type="button" data-chat-prompt="booking">Cara booking</button><button type="button" data-chat-prompt="jam buka">Jam buka</button><button type="button" data-chat-prompt="area COD">Area COD</button></div></div>
       <form class="chat-form"><label class="visually-hidden" for="chat-question">Pertanyaan</label><input class="chat-input" id="chat-question" name="question" autocomplete="off" placeholder="Tulis pertanyaan..." required><button type="submit" aria-label="Kirim">➤</button></form>
     </section>
-    <button class="chat-launch" type="button" aria-label="Chat dengan temankamera_" aria-expanded="false"><img src="${root}/aset/logo%20temankamera.jpeg" alt=""><span>Chat</span></button>`;
+    <button class="chat-launch" type="button" aria-label="Chat dengan temankamera_" aria-expanded="false"><img src="${root}/aset/logo%20temankamera.PNG" alt=""><span>Chat</span></button>`;
   document.body.append(widget);
 
   const panel = widget.querySelector('.chat-panel');
@@ -336,6 +343,7 @@ function renderNavigation() {
     ['Katalog', pagePath('katalog'), 'katalog.html'],
     ['Layanan Kami', pagePath('layanan'), 'layanan.html'],
     ['Galeri Testimoni', pagePath('galeri'), 'galeri.html'],
+    ['Hasil Jepretan', pagePath('hasil-jepretan'), 'hasil-jepretan.html'],
     ['Rules Sewa', pagePath('rules'), 'rules.html'],
     ['Tentang Kami', pagePath('tentang'), 'tentang.html'],
     ['Kontak', pagePath('kontak'), 'kontak.html']
@@ -343,7 +351,7 @@ function renderNavigation() {
   const current = location.pathname.split('/').pop() || 'index.html';
   header.innerHTML = `
     <nav class="nav-shell" aria-label="Navigasi utama">
-      <a class="brand" href="${root}/index.html" aria-label="temankamera_, ke halaman utama"><span class="brand-mark"><img src="${root}/aset/logo%20temankamera.jpeg" alt=""></span><span>temankamera_</span></a>
+      <a class="brand" href="${root}/index.html" aria-label="temankamera_, ke halaman utama"><span class="brand-mark"><img src="${root}/aset/logo%20temankamera.PNG" alt=""></span><span>temankamera_</span></a>
       <div class="nav-controls"><div class="language-switch" role="group" aria-label="Bahasa"><button type="button" data-language-choice="id" aria-pressed="true">ID</button><button type="button" data-language-choice="en" aria-pressed="false">EN</button></div><button class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="main-menu"><span aria-hidden="true">☰</span></button></div>
       <ul class="nav-links" id="main-menu">${links.map(([label, href, file]) => `<li><a href="${href}"${current === file ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}<li><a class="mobile-book" data-booking href="${whatsappUrl()}">Booking Sekarang</a></li></ul>
       <a class="button button-primary nav-book" data-booking href="${whatsappUrl()}">Booking Sekarang <span aria-hidden="true">↗</span></a>
@@ -375,8 +383,8 @@ function renderFooter() {
   footer.innerHTML = `
     <div class="page-wrap">
       <div class="footer-main">
-        <div><a class="brand footer-brand" href="${root}/index.html"><span class="brand-mark"><img src="${root}/aset/logo%20temankamera.jpeg" alt=""></span><span>temankamera_</span></a><p class="footer-tagline">Your friend to capture every moment.</p></div>
-        <ul class="footer-links" aria-label="Navigasi footer"><li><a href="${root}/index.html">Home</a></li><li><a href="${pagePath('katalog')}">Katalog</a></li><li><a href="${pagePath('layanan')}">Layanan Kami</a></li><li><a href="${pagePath('galeri')}">Galeri Testimoni</a></li><li><a href="${pagePath('rules')}">Rules Sewa</a></li><li><a href="${pagePath('tentang')}">Tentang Kami</a></li><li><a href="${pagePath('kontak')}">Kontak</a></li></ul>
+        <div><a class="brand footer-brand" href="${root}/index.html"><span class="brand-mark"><img src="${root}/aset/logo%20temankamera.PNG" alt=""></span><span>temankamera_</span></a><p class="footer-tagline">Your friend to capture every moment.</p></div>
+        <ul class="footer-links" aria-label="Navigasi footer"><li><a href="${root}/index.html">Home</a></li><li><a href="${pagePath('katalog')}">Katalog</a></li><li><a href="${pagePath('layanan')}">Layanan Kami</a></li><li><a href="${pagePath('galeri')}">Galeri Testimoni</a></li><li><a href="${pagePath('hasil-jepretan')}">Hasil Jepretan</a></li><li><a href="${pagePath('rules')}">Rules Sewa</a></li><li><a href="${pagePath('tentang')}">Tentang Kami</a></li><li><a href="${pagePath('kontak')}">Kontak</a></li></ul>
         <div class="footer-social"><strong>Ikuti cerita kami</strong><div class="social-links"><a class="social-link" href="${whatsappUrl()}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp temankamera_"><img src="${root}/aset/LOGO%20WA.jpg" alt=""><span>WhatsApp</span></a><a class="social-link" href="https://www.instagram.com/temankamera_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @temankamera_"><img src="${root}/aset/LOGO%20IG.jpg" alt=""><span>Instagram</span></a><a class="social-link" href="https://www.tiktok.com/@temankamera_" target="_blank" rel="noopener noreferrer" aria-label="TikTok @temankamera_"><img src="${root}/aset/LOGO%20TIKTOK.jpg" alt=""><span>TikTok</span></a></div></div>
       </div>
       <div class="footer-bottom"><p>© ${new Date().getFullYear()} temankamera_</p><p>Your friend to capture every moment.</p></div>
@@ -468,8 +476,27 @@ function renderCustomerGallery() {
   initGalleryLightbox();
 }
 
+function renderCameraShots() {
+  const target = document.querySelector('[data-camera-shots]');
+  if (!target) return;
+
+  target.innerHTML = cameraProducts.map((product) => {
+    const images = cameraShotImages[product.id] || [];
+    const photos = images.map((filename, index) => {
+      const source = `${root}/HASIL%20JEPRETAN/${encodeURIComponent(product.id)}/${encodeURIComponent(filename)}`;
+      return `<figure class="gallery-photo"><img src="${source}" alt="Hasil jepretan ${product.name} ${index + 1}" loading="lazy" decoding="async"></figure>`;
+    }).join('');
+    const content = images.length
+      ? `<div class="gallery-grid">${photos}</div>`
+      : '<p class="camera-shot-empty">Belum ada foto hasil jepretan untuk kamera ini.</p>';
+    return `<section class="camera-shot-group"><h2>${product.name}</h2>${content}</section>`;
+  }).join('');
+
+  initGalleryLightbox();
+}
+
 function initGalleryLightbox() {
-  const gallery = document.querySelector('[data-customer-gallery]');
+  const gallery = document.querySelector('[data-customer-gallery], [data-camera-shots]');
   if (!gallery) return;
 
   let lightbox = document.querySelector('.gallery-lightbox');
@@ -571,6 +598,7 @@ function init() {
   renderProducts();
   renderProductDetail();
   renderCustomerGallery();
+  renderCameraShots();
   initCountUp();
   renderChatWidget();
   document.querySelectorAll('[data-booking]').forEach((link) => {
