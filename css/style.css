@@ -62,8 +62,10 @@ h3 { margin-bottom: 9px; font-size: 1.1rem; }
 .nav-book { min-height: 42px; margin-left: 2px; padding: 9px 16px; font-size: .85rem; }
 .nav-controls { display: flex; align-items: center; gap: 9px; margin-left: auto; }
 .language-switch { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); }
-.language-switch button { min-width: 34px; min-height: 32px; padding: 4px 8px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font-size: .75rem; font-weight: 700; cursor: pointer; }
-.language-switch button[aria-pressed="true"] { background: var(--green-deep); color: white; }
+.language-switch button { width: 38px; min-width: 38px; height: 32px; min-height: 32px; flex: 0 0 38px; padding: 0; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font-size: .75rem; font-weight: 700; line-height: 1; cursor: pointer; transition: background-color .18s ease, color .18s ease, box-shadow .18s ease; }
+.language-switch button[aria-pressed="true"] { background: var(--green-deep); color: white; box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+.language-switch button:hover { background: rgba(52,75,57,.06); }
+.language-switch button[aria-pressed="true"]:hover { background: var(--green-deep); }
 .menu-toggle { display: grid; width: 44px; height: 44px; flex: 0 0 44px; place-items: center; margin-left: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--paper); cursor: pointer; }
 
 .hero { position: relative; overflow: hidden; background-color: var(--sage); background-image: var(--check); background-size: 28px 28px; background-position: 0 0, 14px 14px; }
@@ -77,10 +79,9 @@ h3 { margin-bottom: 9px; font-size: 1.1rem; }
 .hero-footnote { display: flex; align-items: center; gap: 8px; margin-top: 23px; color: #56685a; font-size: .85rem; }
 .hero-footnote span { color: var(--pink); font-size: 1.2rem; }
 .hero-visual { position: relative; min-height: 440px; display: grid; place-items: center; }
-.hero-photo { position: relative; width: min(100%, 420px); aspect-ratio: .97; display: grid; grid-template-rows: 1fr auto; place-items: center; overflow: hidden; margin: 0; padding: 20px 20px 15px; border: 8px solid var(--paper); border-radius: 46% 46% 26px 26px; background: var(--cream); box-shadow: var(--shadow); transform: rotate(2deg); }
+.hero-photo { position: relative; width: min(100%, 420px); aspect-ratio: .97; display: grid; place-items: center; overflow: hidden; margin: 0; padding: 20px; border: 8px solid var(--paper); border-radius: 46% 46% 26px 26px; background: var(--cream); box-shadow: var(--shadow); }
 .hero-photo::after { position: absolute; inset: 7px; border: 1px dashed rgba(52,75,57,.25); border-radius: inherit; content: ''; pointer-events: none; }
-.hero-photo img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
-.hero-photo figcaption { color: var(--muted); font-family: var(--display); font-size: .95rem; }
+.hero-photo img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .mini-note { position: absolute; z-index: 2; right: 0; bottom: 7%; padding: 12px 16px; border-radius: 10px; background: var(--pink-pale); color: #6e4c49; font-family: var(--display); font-size: 1rem; line-height: 1.2; transform: rotate(5deg); }
 .flower, .sparkle { position: absolute; z-index: 2; color: var(--pink); font-size: 2.25rem; line-height: 1; pointer-events: none; }
 .flower-one { top: 5%; left: 4%; }
@@ -315,7 +316,7 @@ body.gallery-lightbox-open { overflow: hidden; }
   .site-header .brand-mark { width: 30px; height: 30px; flex-basis: 30px; }
   .site-header .brand-mark img { width: 26px; height: 26px; }
   .nav-controls { gap: 5px; }
-  .language-switch button { min-width: 29px; min-height: 28px; padding-inline: 6px; }
+  .language-switch button { width: 32px; min-width: 32px; height: 28px; min-height: 28px; flex-basis: 32px; }
   .menu-toggle { width: 40px; height: 40px; flex-basis: 40px; }
   .section { padding: 68px 0; }
   .nav-shell { min-height: 68px; gap: 10px; }
