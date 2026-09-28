@@ -2,8 +2,8 @@
 const WHATSAPP_NUMBER = '6281932977629';
 
 const cameraProducts = [
-  { id: 'canon-m100', name: 'Canon M100', category: 'kamera', image: 'CAM 1.jpeg', price24: 180000, price48: 360000 },
-  { id: 'canon-a2500', name: 'Canon A2500', category: 'kamera', image: 'CAM 2.jpeg', price24: 95000, price48: 180000 },
+  { id: 'canon-a2500', name: 'Canon A2500', category: 'kamera', image: 'CAM 1.jpeg', price24: 95000, price48: 180000 },
+  { id: 'canon-m100', name: 'Canon M100', category: 'kamera', image: 'CAM 2.jpeg', price24: 180000, price48: 360000 },
   { id: 'fujifilm-xa5', name: 'Fujifilm XA5', category: 'kamera', image: 'CAM 3.jpeg', price24: 170000, price48: 335000 },
   { id: 'sony-dsc-w510', name: 'Sony DSC W510', category: 'kamera', image: 'CAM 4.jpeg', price24: 85000, price48: 165000 },
   { id: 'fujifilm-xa3', name: 'Fujifilm XA3', category: 'kamera', image: 'CAM 5.jpeg', price24: 150000, price48: 295000 },
@@ -461,6 +461,69 @@ function renderCustomerGallery() {
   }).join('');
   const count = document.querySelector('[data-gallery-count]');
   if (count) count.textContent = images.length;
+
+  initGalleryLightbox();
+}
+
+function initGalleryLightbox() {
+  const gallery = document.querySelector('[data-customer-gallery]');
+  if (!gallery) return;
+
+  let lightbox = document.querySelector('.gallery-lightbox');
+  if (!lightbox) {
+    lightbox = document.createElement('div');
+    lightbox.className = 'gallery-lightbox';
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightbox.hidden = true;
+    lightbox.innerHTML = `
+      <div class="gallery-lightbox-panel">
+        <button class="gallery-lightbox-close" type="button" aria-label="Tutup foto">×</button>
+        <img src="" alt="Foto galeri yang diperbesar">
+      </div>
+    `;
+    document.body.appendChild(lightbox);
+
+    const close = () => {
+      lightbox.hidden = true;
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('gallery-lightbox-open');
+    };
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox || event.target.closest('.gallery-lightbox-close')) {
+        close();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !lightbox.hidden) {
+        close();
+      }
+    });
+  }
+
+  const imageList = gallery.querySelectorAll('.gallery-photo img');
+  imageList.forEach((image) => {
+    const open = () => {
+      const modalImg = lightbox.querySelector('img');
+      modalImg.src = image.src;
+      modalImg.alt = image.alt;
+      lightbox.hidden = false;
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('gallery-lightbox-open');
+    };
+
+    image.tabIndex = 0;
+    image.setAttribute('role', 'button');
+    image.setAttribute('aria-label', `Perbesar ${image.alt}`);
+    image.addEventListener('click', open);
+    image.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        open();
+      }
+    });
+  });
 }
 
 function initCountUp() {

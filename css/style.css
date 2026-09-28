@@ -165,8 +165,20 @@ h3 { margin-bottom: 9px; font-size: 1.1rem; }
 .gallery-section { background: var(--cream); }
 .gallery-grid { columns: 4 220px; column-gap: 15px; }
 .gallery-photo { display: inline-block; width: 100%; margin: 0 0 15px; overflow: hidden; break-inside: avoid; border: 1px solid #e5e7dd; border-radius: 13px; background: var(--paper); box-shadow: 0 7px 18px rgba(50,72,52,.07); }
-.gallery-photo img { width: 100%; height: auto; object-fit: contain; transition: transform .25s ease; }
+.gallery-photo img { width: 100%; height: auto; object-fit: contain; cursor: zoom-in; transition: transform .25s ease; }
 .gallery-photo:hover img { transform: scale(1.025); }
+.gallery-lightbox { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: clamp(12px, 2vw, 28px); background: rgba(17, 24, 18, 0.78); backdrop-filter: blur(2px); }
+.gallery-lightbox[hidden] { display: none; }
+.gallery-lightbox-panel { position: relative; width: min(96vw, 1200px); max-height: min(88vh, 900px); display: grid; place-items: center; padding: clamp(10px, 1.5vw, 20px); border-radius: 18px; background: rgba(255,255,255,.15); box-shadow: 0 24px 60px rgba(15, 23, 17, 0.34); }
+.gallery-lightbox-panel img { display: block; width: auto; max-width: 100%; max-height: min(82vh, 760px); border-radius: 12px; object-fit: contain; background: rgba(255,255,255,.92); }
+.gallery-lightbox-close { position: absolute; top: 10px; right: 10px; width: 38px; height: 38px; border: 0; border-radius: 50%; background: rgba(17, 24, 18, 0.7); color: white; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+body.gallery-lightbox-open { overflow: hidden; }
+@media (max-width: 480px) {
+  .gallery-lightbox { padding: 12px; }
+  .gallery-lightbox-panel { width: min(94vw, 440px); padding: 8px; }
+  .gallery-lightbox-panel img { max-height: 72vh; }
+  .gallery-lightbox-close { top: 8px; right: 8px; width: 32px; height: 32px; font-size: 1.5rem; }
+}
 .page-hero h1 { margin-bottom: 13px; font-size: clamp(2.8rem, 6vw, 4.7rem); }
 .page-hero p:last-child { max-width: 620px; margin: 0 auto; color: var(--muted); }
 .breadcrumb { margin-bottom: 15px; color: var(--green); font-size: .83rem; font-weight: 700; }
@@ -266,6 +278,25 @@ h3 { margin-bottom: 9px; font-size: 1.1rem; }
 .chat-form { display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--line); background: white; }
 .chat-input { min-width: 0; min-height: 42px; flex: 1; padding: 9px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--cream); color: var(--ink); font: inherit; font-size: .88rem; }
 .chat-form button { width: 42px; height: 42px; flex: 0 0 42px; border: 0; border-radius: 50%; background: var(--green-deep); color: white; font-size: 1.15rem; cursor: pointer; }
+
+@media (max-width: 480px) {
+  .chat-widget { right: 8px; bottom: 8px; left: 8px; align-items: stretch; }
+  .chat-launch { min-height: 52px; padding: 6px 12px 6px 6px; align-self: flex-end; }
+  .chat-launch img { width: 36px; height: 36px; flex-basis: 36px; }
+  .chat-launch span { font-size: .82rem; }
+  .chat-panel { width: min(100%, 360px); max-width: 100%; max-height: min(72vh, 420px); margin-inline: auto; }
+  .chat-header { min-height: 58px; padding: 9px 10px; }
+  .chat-header > img { width: 38px; height: 38px; flex-basis: 38px; }
+  .chat-header strong { font-size: .82rem; }
+  .chat-header small { font-size: .68rem; }
+  .chat-messages { min-height: 150px; max-height: min(46vh, 280px); padding: 12px 10px; }
+  .chat-message { max-width: 92%; padding: 8px 10px; font-size: .78rem; }
+  .chat-prompts { gap: 6px; }
+  .chat-prompts button { min-height: 30px; padding: 5px 8px; font-size: .7rem; }
+  .chat-form { gap: 6px; padding: 8px; }
+  .chat-input { min-height: 38px; padding: 8px 10px; font-size: .77rem; }
+  .chat-form button { width: 38px; height: 38px; flex-basis: 38px; }
+}
 
 @media (max-width: 920px) {
   .hero-grid { min-height: 520px; gap: 28px; }
