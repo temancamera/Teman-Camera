@@ -246,7 +246,7 @@ h3 { margin-bottom: 9px; font-size: 1.1rem; }
 .chat-launch { min-height: 58px; display: inline-flex; align-items: center; gap: 9px; padding: 7px 16px 7px 7px; border: 1px solid rgba(255,255,255,.8); border-radius: 999px; background: var(--green-deep); box-shadow: 0 9px 26px rgba(39,59,43,.23); color: white; font-weight: 700; cursor: pointer; }
 .chat-launch:hover { background: #263c2b; }
 .chat-launch img { width: 42px; height: 42px; flex: 0 0 42px; border-radius: 50%; background: white; object-fit: contain; }
-.chat-panel { width: min(370px, calc(100vw - 36px)); max-height: min(560px, calc(100vh - 105px)); display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); box-shadow: 0 18px 48px rgba(34,51,38,.22); }
+.chat-panel { width: min(370px, calc(100vw - 36px)); min-width: 0; max-width: calc(100vw - 40px); max-height: min(560px, calc(100vh - 105px)); display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); box-shadow: 0 18px 48px rgba(34,51,38,.22); }
 .chat-panel[hidden] { display: none; }
 .chat-header { min-height: 70px; display: flex; align-items: center; gap: 10px; padding: 11px 13px; background: var(--green-deep); color: white; }
 .chat-header > img { width: 44px; height: 44px; flex: 0 0 44px; border-radius: 50%; background: white; object-fit: contain; }
@@ -278,7 +278,14 @@ h3 { margin-bottom: 9px; font-size: 1.1rem; }
 }
 @media (max-width: 700px) {
   html { scroll-padding-top: 72px; }
-  .page-wrap, .nav-shell { width: calc(100% - 36px); }
+  .page-wrap { width: calc(100% - 36px); }
+  .nav-shell { width: calc(100% - 28px); min-height: 68px; gap: 6px; }
+  .site-header .brand { gap: 6px; font-size: .78rem; }
+  .site-header .brand-mark { width: 30px; height: 30px; flex-basis: 30px; }
+  .site-header .brand-mark img { width: 26px; height: 26px; }
+  .nav-controls { gap: 5px; }
+  .language-switch button { min-width: 29px; min-height: 28px; padding-inline: 6px; }
+  .menu-toggle { width: 40px; height: 40px; flex-basis: 40px; }
   .section { padding: 68px 0; }
   .nav-shell { min-height: 68px; gap: 10px; }
   .nav-book { display: none; }
@@ -332,14 +339,7 @@ h3 { margin-bottom: 9px; font-size: 1.1rem; }
   .footer-bottom { flex-direction: column; }
 }
 @media (max-width: 380px) {
-  .page-wrap, .nav-shell { width: calc(100% - 28px); }
-  .nav-shell { gap: 6px; }
-  .site-header .brand { gap: 6px; font-size: .78rem; }
-  .site-header .brand-mark { width: 30px; height: 30px; flex-basis: 30px; }
-  .site-header .brand-mark img { width: 26px; height: 26px; }
-  .nav-controls { gap: 5px; }
-  .language-switch button { min-width: 29px; min-height: 28px; padding-inline: 6px; }
-  .menu-toggle { width: 40px; height: 40px; flex-basis: 40px; }
+  .page-wrap { width: calc(100% - 28px); }
   .hero-visual { min-height: 285px; }
   .hero-photo { width: min(76%, 270px); }
   .product-grid { gap: 9px; }

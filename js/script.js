@@ -124,7 +124,53 @@ const englishText = {
   'Jam buka 10.00–22.00.': 'We are open from 10:00 to 22:00.',
   'Area layanan Cibubur dan Bekasi. Tersedia COD, self pick up, dan self delivery.': 'We serve Cibubur and Bekasi, with meet-up, self-pickup, and self-delivery options.',
   'Kami menyediakan Instax Mini 13, paper refill, bundling Instax, jasa pindahan foto, dan Type-C Lighting.': 'We offer the Instax Mini 13, paper refills, an Instax bundle, photo transfer, and Type-C lighting.',
-  'Baca rules sewa di halaman Rules Sewa. Untuk detail lainnya, tim kami siap membantu lewat WhatsApp.': 'Read the rental terms on the Rental Terms page. Our team can help with anything else on WhatsApp.'
+  'Baca rules sewa di halaman Rules Sewa. Untuk detail lainnya, tim kami siap membantu lewat WhatsApp.': 'Read the rental terms on the Rental Terms page. Our team can help with anything else on WhatsApp.',
+  'Ikuti cerita kami': 'Follow our stories', 'Area layanan': 'Service area', 'Opsi layanan': 'Service options',
+  'Kontak & Booking': 'Contact & Booking', 'Rules Sewa': 'Rental Terms',
+  'Biar nyaman untuk semua': 'For everyone’s comfort',
+  'Mohon baca ketentuan ini sebelum booking agar proses sewa berjalan dengan jelas dan nyaman.': 'Please read these terms before booking so the rental process is clear and comfortable.',
+  'Booking & Pembayaran': 'Booking & Payment', 'Durasi Sewa': 'Rental Duration',
+  'Pengiriman & Pengembalian': 'Delivery & Returns', 'Persyaratan': 'Requirements',
+  'Kondisi & Penggunaan Kamera': 'Camera Condition & Use', 'Kerusakan Kamera': 'Camera Damage',
+  'Pengembalian Barang': 'Returning Equipment', 'Kerahasiaan Identitas': 'Identity & Privacy', 'Konsekuensi': 'Consequences',
+  'Cancel secara sepihak = DP hangus dan tidak dapat di-refund.': 'Unilateral cancellation means the deposit is forfeited and non-refundable.',
+  'Durasi sewa dihitung per 24 jam.': 'Rental time is calculated in 24-hour periods.',
+  'Contoh: pengambilan tanggal 5 Januari pukul 08.00 dan pengembalian tanggal 6 Januari pukul 08.00 dihitung 1 hari.': 'Example: pickup on January 5 at 08:00 and return on January 6 at 08:00 counts as one day.',
+  'Penyewa kurang dari 1 hari tetap dikenakan biaya sewa 1 hari penuh.': 'Rentals shorter than one day are still charged as a full day.',
+  'Self delivery menggunakan harga sesuai aplikasi.': 'Self-delivery is charged at the price shown in the delivery app.',
+  'Self pick up tersedia di Bukit Golf Cibubur, Gunung Putri, dan Duta Harapan, Bekasi.': 'Self-pickup is available at Bukit Golf Cibubur, Gunung Putri, and Duta Harapan, Bekasi.',
+  'Barang harus diterima langsung oleh penyewa dan tidak dapat dititipkan.': 'The renter must receive the equipment in person; it cannot be left with someone else.',
+  'Jam pengembalian kamera menjadi acuan awal perhitungan masa sewa.': 'The agreed return time is used to calculate the rental period.',
+  'Penyewa wajib menitipkan identitas asli resmi: KTP, KTM, KK, atau SIM.': 'Renters must leave an original official ID: KTP, KTM, KK, or SIM.',
+  'Tidak diperbolehkan menggunakan fotokopi dan tidak menerima alasan untuk tidak memenuhi jaminan.': 'Photocopies are not accepted. The required guarantee must be provided.',
+  'Wajib mengisi data diri dan format sewa.': 'Personal details and the rental form must be completed.',
+  'Wajib memberikan screenshot akun Instagram (bukan second account) dan follow @temankamera_.': 'A screenshot of your Instagram account (not a secondary account) and a follow of @temankamera_ are required.',
+  'Nama penyewa harus sama dengan nama KTP dan nama rekening.': 'The renter’s name must match the name on their ID and bank account.',
+  'Kamera harus dipastikan dalam kondisi baik saat diserahkan dan dikembalikan.': 'The camera must be in good condition when received and returned.',
+  'Wajib dicek/difoto saat barang diterima.': 'Check and photograph the equipment upon receipt.',
+  'Gunakan kamera dengan hati-hati dan hindari jatuh atau terkena air.': 'Handle the camera carefully and keep it away from drops and water.',
+  'Masukkan baterai dengan pelan dan jangan sampai salah pasang.': 'Insert the battery carefully and make sure it is oriented correctly.',
+  'Jika body kamera lecet karena penyewa, penyewa wajib mengganti sesuai harga.': 'The renter must pay for scratches to the camera body caused during the rental.',
+  'Kerusakan atau kehilangan menjadi tanggung jawab penyewa 100%.': 'The renter is fully responsible for damage or loss.',
+  'Untuk kamera selfie, hindari terlalu sering memegang bagian layar flip.': 'For selfie cameras, avoid holding the flip screen frequently.',
+  'Wajib mengganti kerusakan sesuai harga pasar.': 'Damage must be compensated at market value.',
+  'Kerusakan minor': 'Minor damage', 'Noda yang tidak dapat dihilangkan pada body kamera atau case kamera.': 'Permanent stains on the camera body or case.',
+  'Kerusakan major': 'Major damage', 'Kehilangan aksesori seperti baterai, case, atau pouch kamera.': 'Loss of accessories such as a battery, case, or camera pouch.',
+  'Kerusakan body kamera yang mengubah bentuk fisik seperti baret parah, bekas benturan, atau retakan.': 'Physical body damage such as deep scratches, impact marks, or cracks.',
+  'Penyewa wajib mengganti kerugian sebesar 100% dari harga kamera.': 'The renter must compensate 100% of the camera price.',
+  'Kerusakan fatal': 'Severe damage',
+  'Apabila kamera tidak dapat beroperasi secara normal, penyewa wajib mengganti kerugian sebesar harga kamera atau mengganti dengan kamera yang sama persis dan masih berfungsi dengan baik.': 'If the camera cannot operate normally, the renter must pay its full value or replace it with the exact same model in working condition.',
+  'Penggantian wajib diselesaikan maksimal 3 hari kerja setelah tanggal sewa terakhir.': 'Replacement must be completed within 3 working days after the final rental date.',
+  'Pengembalian sesuai waktu mendapatkan toleransi 1 jam.': 'Returns have a one-hour grace period.',
+  'Lebih dari 1 jam dikenakan denda Rp20.000/jam.': 'Returns over one hour late incur a Rp20,000 per hour fee.',
+  'Barang harus dikembalikan sesuai kelengkapan unit.': 'Return the equipment with all included items.',
+  'Tote bag yang hilang dikenakan denda.': 'A fee applies if the tote bag is lost.',
+  'KTP dikembalikan setelah barang diterima dan dicek aman.': 'The KTP is returned after the equipment is received and checked.',
+  'temankamera_ sangat menjaga kepercayaan penyewa.': 'temankamera_ values the trust of every renter.',
+  'Seluruh informasi dan data yang diberikan melalui WhatsApp hanya digunakan untuk keperluan penyewaan dan tidak akan disalahgunakan.': 'Information shared through WhatsApp is used only for the rental and will not be misused.',
+  'Posting penyewa saat menggunakan kamera maupun hasil foto dari kamera @temankamera_ dapat di-repost hanya apabila penyewa menandai akun @temankamera_ pada postingan dan mengirimkan foto secara langsung kepada pihak @temankamera_.': 'Posts or photos from a rental may be reposted only when the renter tags @temankamera_ and sends the photo directly to @temankamera_.',
+  'Pastikan tanggal, pilihan kamera, dan proses booking dikonfirmasi melalui WhatsApp. Ketersediaan produk mengikuti jadwal rental.': 'Confirm your dates, camera choice, and booking via WhatsApp. Product availability depends on the rental schedule.',
+  'Tanya & Booking via WhatsApp ↗': 'Ask & Book on WhatsApp ↗'
 };
 
 function translateText(rootElement = document.body) {
@@ -235,7 +281,7 @@ function renderChatWidget() {
     if (showWhatsApp) {
       const link = document.createElement('a');
       link.className = 'chat-whatsapp-link';
-      link.href = whatsappUrl();
+      link.href = assistantWhatsAppUrl();
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       link.textContent = currentLanguage === 'en' ? 'Continue on WhatsApp ↗' : 'Lanjut ke WhatsApp ↗';
@@ -273,6 +319,13 @@ function whatsappUrl(productName = '') {
     ? `https://wa.me/${number}?text=${encodeURIComponent(message)}`
     : `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
   return destination;
+}
+
+function assistantWhatsAppUrl() {
+  const message = currentLanguage === 'en'
+    ? 'Hello Teman Camera! I have a question about renting a camera.'
+    : 'Halo Teman Camera! Saya ingin bertanya tentang penyewaan kamera.';
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
 function renderNavigation() {
