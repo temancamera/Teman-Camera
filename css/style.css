@@ -259,7 +259,7 @@ body.gallery-lightbox-open { overflow: hidden; }
 .footer-bottom p { margin: 0; }
 
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
-.chat-widget { position: fixed; z-index: 60; right: 22px; bottom: 20px; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.chat-widget { position: fixed; z-index: 60; right: 22px; bottom: 52px; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
 .chat-launch { min-height: 58px; display: inline-flex; align-items: center; gap: 9px; padding: 7px 16px 7px 7px; border: 1px solid rgba(255,255,255,.8); border-radius: 999px; background: var(--green-deep); box-shadow: 0 9px 26px rgba(39,59,43,.23); color: white; font-weight: 700; cursor: pointer; }
 .chat-launch:hover { background: #263c2b; }
 .chat-launch img { width: 42px; height: 42px; flex: 0 0 42px; border-radius: 50%; background: white; object-fit: contain; }
@@ -285,7 +285,7 @@ body.gallery-lightbox-open { overflow: hidden; }
 .chat-form button { width: 42px; height: 42px; flex: 0 0 42px; border: 0; border-radius: 50%; background: var(--green-deep); color: white; font-size: 1.15rem; cursor: pointer; }
 
 @media (max-width: 480px) {
-  .chat-widget { right: 8px; bottom: 8px; left: 8px; align-items: stretch; }
+  .chat-widget { right: 8px; bottom: 52px; left: 8px; align-items: stretch; }
   .chat-launch { min-height: 52px; padding: 6px 12px 6px 6px; align-self: flex-end; }
   .chat-launch img { width: 36px; height: 36px; flex-basis: 36px; }
   .chat-launch span { font-size: .82rem; }
@@ -369,7 +369,7 @@ body.gallery-lightbox-open { overflow: hidden; }
   .gallery-grid { columns: 2; column-gap: 10px; }
   .gallery-photo { margin-bottom: 10px; border-radius: 10px; }
   .footer-main { flex-direction: column; gap: 22px; }
-  .chat-widget { right: 12px; bottom: 12px; }
+  .chat-widget { right: 12px; bottom: 52px; }
   .chat-panel { width: min(370px, calc(100vw - 24px)); max-height: min(540px, calc(100vh - 92px)); }
   .footer-links { gap: 11px 16px; }
   .footer-bottom { flex-direction: column; }
