@@ -262,14 +262,14 @@ function setLanguage(language) {
   const chatInput = document.querySelector('.chat-input');
   if (chatInput) chatInput.placeholder = language === 'en' ? 'Type your question...' : 'Tulis pertanyaan...';
   const titleTranslations = {
-    'temankamera_ — Your friend to capture every moment': 'temankamera_ — Your friend to capture every moment',
-    'Katalog Rental Kamera — temankamera_': 'Camera Rentals — temankamera_',
-    'Layanan Kami — temankamera_': 'Our Services — temankamera_',
-    'Galeri Testimoni — temankamera_': 'Customer Gallery — temankamera_',
-    'Hasil Jepretan — temankamera_': 'Photo Gallery — temankamera_',
-    'Rules Sewa — temankamera_': 'Rental Terms — temankamera_',
-    'Tentang Kami — temankamera_': 'About Us — temankamera_',
-    'Kontak & Booking — temankamera_': 'Contact & Booking — temankamera_',
+    'Sewa Kamera Cibubur & Bekasi | TEMAN CAMERA': 'Camera Rentals in Cibubur & Bekasi | TEMAN CAMERA',
+    'Katalog Sewa Kamera Cibubur & Bekasi — TEMAN CAMERA': 'Camera Rentals in Cibubur & Bekasi — TEMAN CAMERA',
+    'Layanan Sewa Kamera — TEMAN CAMERA': 'Camera Rental Services — TEMAN CAMERA',
+    'Galeri Testimoni — TEMAN CAMERA': 'Customer Gallery — TEMAN CAMERA',
+    'Hasil Jepretan Kamera — TEMAN CAMERA': 'Sample Camera Photos — TEMAN CAMERA',
+    'Aturan Sewa Kamera — TEMAN CAMERA': 'Camera Rental Terms — TEMAN CAMERA',
+    'Tentang TEMAN CAMERA — temankamera_': 'About TEMAN CAMERA — temankamera_',
+    'Rental Kamera Cibubur & Bekasi — Kontak TEMAN CAMERA': 'Camera Rentals in Cibubur & Bekasi — TEMAN CAMERA',
     'Detail Produk — temankamera_': 'Product Details — temankamera_'
   };
   document.title = language === 'en' ? titleTranslations[initialPageTitle] || initialPageTitle : initialPageTitle;
