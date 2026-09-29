@@ -5,7 +5,7 @@ const cameraProducts = [
   { id: 'canon-m100', name: 'Canon M100', category: 'kamera', image: 'canon-m100-24-jam-180k-48-jam-360k.jpeg', price24: 180000, price48: 360000 },
   { id: 'canon-a2500', name: 'Canon A2500', category: 'kamera', image: 'canon-a2500-24-jam-95k-48-jam-180k.jpeg', price24: 95000, price48: 180000 },
   { id: 'fujifilm-x-a5', name: 'Fujifilm X-A5', category: 'kamera', image: 'fujifilm-x-a5-24-jam-170k-48-jam-335k.jpeg', price24: 170000, price48: 335000 },
-  { id: 'sony-dsc-w510', name: 'Sony DSC W510', category: 'kamera', image: 'sony-dsc-w510-24-jam-85k-48-jam-180k.jpeg', price24: 85000, price48: 180000 },
+  { id: 'sony-dsc-w510', name: 'Sony DSC W510', category: 'kamera', image: 'sony-dsc-w510-24-jam-85k-48-jam-165k.jpeg', price24: 85000, price48: 165000 },
   { id: 'olympus-tg-320', name: 'Olympus TG 320', category: 'kamera', image: 'olympus-tg-320-24-jam-75k-48-jam-145k.jpeg', price24: 75000, price48: 145000 },
   { id: 'fujifilm-x-a3', name: 'Fujifilm X-A3', category: 'kamera', image: 'fujifilm-x-a3-24-jam-150k-48-jam-295k.jpeg', price24: 150000, price48: 295000 }
 ];
