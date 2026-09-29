@@ -8,7 +8,7 @@ const cameraProducts = [
   { id: 'sony-dsc-w510', name: 'Sony DSC W510', category: 'kamera', image: 'sony-dsc-w510-24-jam-85k-48-jam-165k.jpeg', price24: 85000, price48: 165000 },
   { id: 'olympus-tg-320', name: 'Olympus TG 320', category: 'kamera', image: 'olympus-tg-320-24-jam-75k-48-jam-145k.jpeg', price24: 75000, price48: 145000 },
   { id: 'fujifilm-x-a3', name: 'Fujifilm X-A3', category: 'kamera', image: 'fujifilm-x-a3-24-jam-150k-48-jam-295k.jpeg', price24: 150000, price48: 295000 },
-  { id: 'instax-mini-13', name: 'Instax Mini 13', category: 'kamera', note: 'Camera only', price24: 45000, image: 'instax-mini-13-45k.jpeg', visual: 'INSTAX' }
+  { id: 'instax-mini-13', name: 'Instax Mini 13', category: 'kamera', note: 'Kamera saja', price24: 45000, image: 'instax-mini-13-45k.jpeg', visual: 'INSTAX' }
 ];
 
 const cameraShotImages = {
@@ -163,7 +163,7 @@ const englishText = {
   'Dari kamera dan foto instan sampai bantuan tambahan untuk momenmu.': 'From cameras and instant photos to helpful extras for your moments.',
   'Teman untuk setiap momen': 'A friend for every moment', 'Pilihan layanan': 'Services',
   'Harga tambahan mengikuti pricelist temankamera_.': 'Prices follow the temankamera_ price list.',
-  'Camera only': 'Camera only', '1 pack': '1 pack', 'Putih polos, 1 pack': 'Plain white, 1 pack',
+  'Kamera saja': 'Camera only', '1 pack': '1 pack', 'Putih polos, 1 pack': 'Plain white, 1 pack',
   'Per layanan': 'Per service', 'Pengambilan & pengiriman': 'Pickup & delivery',
   'Pilih cara yang nyaman': 'Choose what works for you',
   'Opsi yang tersedia: COD, self pick up, dan self delivery. Titik pengambilan tersedia di Cibubur dan Bekasi. Detail lokasi dan ketentuan ada di halaman kontak dan rules sewa.': 'Available options: meet-up, self pickup, and self delivery. Pickup points are in Cibubur and Bekasi. See Contact and Rental Terms for details.',
