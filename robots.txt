@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://temancamera.github.io/temankamera_/sitemap.xml
