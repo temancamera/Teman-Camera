@@ -5,18 +5,76 @@ const cameraProducts = [
   { id: 'canon-m100', name: 'Canon M100', category: 'kamera', image: 'canon-m100-24-jam-180k-48-jam-360k.jpeg', price24: 180000, price48: 360000 },
   { id: 'canon-a2500', name: 'Canon A2500', category: 'kamera', image: 'canon-a2500-24-jam-95k-48-jam-180k.jpeg', price24: 95000, price48: 180000 },
   { id: 'fujifilm-x-a5', name: 'Fujifilm X-A5', category: 'kamera', image: 'fujifilm-x-a5-24-jam-170k-48-jam-335k.jpeg', price24: 170000, price48: 335000 },
-  { id: 'sony-dsc-w510', name: 'Sony DSC W510', category: 'kamera', image: 'sony-dsc-w510-24-jam-85k-48-jam-165k.jpeg', price24: 85000, price48: 165000 },
+  { id: 'sony-dsc-w510', name: 'Sony DSC W510', category: 'kamera', image: 'sony-dsc-w510-24-jam-85k-48-jam-180k.jpeg', price24: 85000, price48: 180000 },
   { id: 'olympus-tg-320', name: 'Olympus TG 320', category: 'kamera', image: 'olympus-tg-320-24-jam-75k-48-jam-145k.jpeg', price24: 75000, price48: 145000 },
   { id: 'fujifilm-x-a3', name: 'Fujifilm X-A3', category: 'kamera', image: 'fujifilm-x-a3-24-jam-150k-48-jam-295k.jpeg', price24: 150000, price48: 295000 }
 ];
 
-const cameraShotImages = Object.fromEntries(cameraProducts.map((product) => [product.id, []]));
+const cameraShotImages = {
+  'canon-a2500': [
+    'IMG_4343.PNG', 'IMG_4344.PNG', 'IMG_4347.PNG', 'IMG_4348.PNG', 'IMG_4349.PNG', 'IMG_4350.PNG', 'IMG_4351.PNG'
+  ],
+  'canon-m100': [
+    '1d5cd187-3893-4167-8aca-c62520f2258c.jpg', '3621f0f9-5820-48a4-ba17-e32ee762c049.jpg',
+    '4d7c47d5-9631-4d06-85b0-35b1440e2d87.jpg', '99df5628-1a46-4a61-ae85-0b3107d1e6c5.JPG',
+    'acc85fa4-ba7d-4343-81fb-484c1a3222c6.JPG', 'c7e56915-68d2-442a-adec-608252cb5e0e.JPG',
+    'e016a3b0-10dc-4e82-aea0-183bd5c117e0.jpg', 'eee7c283-5a72-44e3-b2c4-2b523016fa9f.jpg',
+    'fb112cc4-b357-4ce4-abcf-fa0434a9b123.JPG', 'IMG_0990.JPG', 'IMG_2817.JPG', 'IMG_4340.PNG',
+    'IMG_4341.PNG', 'IMG_4342.PNG', 'IMG_4346.PNG', 'IMG_4356.PNG', 'IMG_4357.PNG'
+  ],
+  'fujifilm-x-a3': [
+    '0c814692-fd25-4935-8494-3dce5a45a11c.jpg', '16d49f78-ca0e-445f-93d1-af5d6d284b46.jpg',
+    '27e07044-5cc5-45dc-9926-df8d4e971dcd.jpg', '327e6063-c31d-4696-aff8-0aea3a59deba.jpg',
+    '36516db5-a71b-46a1-9da7-d748387d34ce.jpg', '47420608-9bde-42cc-8dcf-8838eaec7cc7.jpg',
+    '62a6ac78-4485-490e-831f-ea82d683bb57.jpg', '663426c5-b0bb-42a8-9433-1e1ee76db553.jpg',
+    '6c8e106e-83b6-4c0f-8b89-385a5a910f09.jpg', '7adbe834-39b6-4e1c-8967-59ab4dc42267.jpg',
+    '8419fc68-5626-4d58-97f3-0b51efe84cc4.jpg', '8a0b7bde-2b1a-40bc-9f60-d238a2d9360a.jpg',
+    '9968104a-1304-4919-911c-f00d013d036e.jpg', 'DSCF0178.JPG', 'DSCF0179.JPG', 'DSCF0183.JPG',
+    'DSCF0193.JPG', 'DSCF0194.JPG', 'EDCBF1C0-6035-4483-B98E-1AB5DB318247.jpg',
+    'f318d856-2594-4d07-a849-064b569072f1.jpg', 'IMG_1744.JPG', 'IMG_1745.JPG', 'IMG_1920.jpg',
+    'IMG_2008.JPG', 'IMG_2009.JPG', 'IMG_2857.JPG', 'IMG_2858.JPG', 'IMG_2859.JPG', 'IMG_2860.JPG',
+    'IMG_2865.JPG', 'IMG_4335.PNG', 'IMG_4336.PNG', 'IMG_4345.PNG'
+  ],
+  'fujifilm-x-a5': [
+    '00B35AD9-6D75-4AF7-A5E2-39662197FA4A-2579-000000AB79ACF513.jpg',
+    '00DB888D-82F3-4DC5-A692-E7F9AA676FB1-2579-000000ABC56D5BC8.jpg',
+    '0b21efe5-5aa6-49da-a934-dd6a70bfb7f4.jpg', '159a944b-54ee-489f-9042-1490dbfb3b2e (1).jpg',
+    '159a944b-54ee-489f-9042-1490dbfb3b2e.jpg',
+    '1C479A89-DEA4-4B98-8D86-DD740C0C65D9-2579-000000A912FA02E9.jpg',
+    '1F3C755F-6077-4D6B-AE0C-202347D7981E-2579-000000ABEB5F92C5.jpg',
+    '2cba5761-dee2-4166-8775-e9d0678b7b2a.jpg', '52f9ab39-f86d-4236-81d4-5d862c469d8e (1).jpg',
+    '52f9ab39-f86d-4236-81d4-5d862c469d8e.jpg',
+    '633F2B78-17A8-4B4A-A0F1-6B600692504C-2579-000000ABB280F505.jpg',
+    '6A0B6DBA-5B23-4846-B269-CA0CE38F4240-2579-000000A937F2227A.jpg',
+    '70e51903-ccd1-44b4-b385-068b49f002f1 (1).jpg', '70e51903-ccd1-44b4-b385-068b49f002f1.jpg',
+    '746aeb30-b58d-43e1-b8e6-10210ec96489.jpg', '7d436502-22d3-4e11-a8b6-8d51edf97e30.jpg',
+    '813FA6F9-6944-47D6-B582-B1B87D34B915-2579-000000AB64BB13A4.jpg',
+    '8A5DEC0C-F1F7-4E45-A2CC-FA416E1620F7-2579-000000AB4A0BEA8A (1).jpg',
+    '8A5DEC0C-F1F7-4E45-A2CC-FA416E1620F7-2579-000000AB4A0BEA8A.jpg',
+    '910F78D3-DCD0-4C11-A444-5705137D56C1-2579-000000AA010F4400.jpg',
+    'DSCF6504.JPG', 'DSCF6559.JPG', 'DSCF6561.JPG', 'DSCF6562.JPG',
+    'FBD2B452-82E6-4C54-BBE1-F4CDBE6D1DAC-2579-000000A9FBCC7CB6.jpg',
+    'fd5f4870-9045-444f-8ab9-9e0a5ba4ac11.jpg', 'IMG_1085.JPG', 'IMG_3335.JPG', 'IMG_3336.JPG'
+  ],
+  'olympus-tg-320': [
+    '149DEA6B-68ED-4C56-9301-EDBC8CCA5141.jpg', '45518C44-998F-4AB4-8CEF-0222AC24118A.jpg',
+    '464172EC-6AA6-4C6B-9FF5-51123D92D1AF.jpg', '9A1BE72C-A1F5-47B0-A769-D94C2CB0DF08.jpg',
+    'EBA3CF58-1530-4600-AA95-5B62CA1A144A.jpg', 'IMG_4358.PNG', 'IMG_4359.PNG'
+  ],
+  'sony-dsc-w510': [
+    '165663d9-bc15-4cea-9378-118069b9d12f.jpg', '7889d726-35b6-4910-8251-4c60877ac190.jpg',
+    '85d48fef-f650-472c-9f6d-7c31e8d845ff.jpg', '8c82259c-2e05-470a-b766-f254ebacae62.jpg',
+    '92613e47-a649-4890-87ae-8df32a5fd8fc.jpg', 'd4e45c08-fe93-4b25-83d6-0187b229c08d.jpg',
+    'DSC03661.JPG', 'DSC03734.JPG', 'IMG_3422.JPG', 'IMG_3423.JPG', 'IMG_3424.JPG',
+    'IMG_3425.JPG', 'IMG_3426.JPG', 'IMG_3428.JPG', 'IMG_9465.JPG'
+  ]
+};
 
 const extraProducts = [
   { id: 'instax-mini-13', name: 'Instax Mini 13', category: 'accessories', note: 'Camera only', price24: 45000, image: 'instax-mini-13-45k.jpeg', visual: 'INSTAX' },
   { id: 'paper-refill-putih', name: 'Paper Refill Fuji Polaroid', category: 'accessories', note: '1 pack', price24: 170000, image: 'paper-refill-fuji-polaroid-1-pack-170k.jpg', visual: 'PAPER' },
   { id: 'instax-bundle', name: 'Bundling Kamera + Paper Polaroid', category: 'accessories', note: '1 pack', price24: 210000, image: 'bundling-kamera-paper-polaroid-1-pack-210k.jpeg', visual: 'BUNDLE' },
-  { id: 'jasa-pindahan-foto', name: 'Jasa Pindahan Foto', category: 'accessories', price24: 15000, visual: 'TRANSFER' },
+  { id: 'jasa-pindahan-foto', name: 'Jasa Pindahan Foto', category: 'accessories', price24: 15000, image: 'jasa-pindahan-foto-15k.PNG' },
   { id: 'type-c-lighting', name: 'Type-C Lighting', category: 'accessories', price24: 20000, image: 'type-c-lighting-1-20k.JPG', visual: 'LIGHT' }
 ];
 
@@ -263,12 +321,12 @@ function renderChatWidget() {
   const widget = document.createElement('div');
   widget.className = 'chat-widget';
   widget.innerHTML = `
-    <section class="chat-panel" aria-label="Chat temankamera_" hidden>
-      <header class="chat-header"><img src="${root}/aset/logo%20temankamera.PNG" alt=""><div><strong>temankamera_ Assistant</strong><small>Info rental kamera</small></div><button class="chat-close" type="button" aria-label="Tutup chat">×</button></header>
+    <section class="chat-panel" aria-label="Chat temankamera_ai" hidden>
+      <header class="chat-header"><img src="${root}/aset/LOGO%20temankamera_.png" alt=""><div><strong>temankamera_ Assistant</strong><small>Info rental kamera</small></div><button class="chat-close" type="button" aria-label="Tutup chat">×</button></header>
       <div class="chat-messages" role="log" aria-live="polite"><p class="chat-message chat-message-bot" data-chat-greeting></p><div class="chat-prompts"><button type="button" data-chat-prompt="harga">Harga kamera</button><button type="button" data-chat-prompt="booking">Cara booking</button><button type="button" data-chat-prompt="jam buka">Jam buka</button><button type="button" data-chat-prompt="area COD">Area COD</button></div></div>
       <form class="chat-form"><label class="visually-hidden" for="chat-question">Pertanyaan</label><input class="chat-input" id="chat-question" name="question" autocomplete="off" placeholder="Tulis pertanyaan..." required><button type="submit" aria-label="Kirim">➤</button></form>
     </section>
-    <button class="chat-launch" type="button" aria-label="Chat dengan temankamera_" aria-expanded="false"><img src="${root}/aset/logo%20temankamera.PNG" alt=""><span>Chat</span></button>`;
+    <button class="chat-launch" type="button" aria-label="Buka temankamera_ai" aria-expanded="false"><img src="${root}/aset/LOGO%20temankamera_.png" alt=""><span>temankamera_ai</span></button>`;
   document.body.append(widget);
 
   const panel = widget.querySelector('.chat-panel');
@@ -351,7 +409,7 @@ function renderNavigation() {
   const current = location.pathname.split('/').pop() || 'index.html';
   header.innerHTML = `
     <nav class="nav-shell" aria-label="Navigasi utama">
-      <a class="brand" href="${root}/index.html" aria-label="temankamera_, ke halaman utama"><span class="brand-mark"><img src="${root}/aset/logo%20temankamera.PNG" alt=""></span><span>temankamera_</span></a>
+      <a class="brand" href="${root}/index.html" aria-label="temankamera_, ke halaman utama"><span class="brand-mark"><img src="${root}/aset/LOGO%20temankamera_.png" alt=""></span><span>temankamera_</span></a>
       <div class="nav-controls"><div class="language-switch" role="group" aria-label="Bahasa"><button type="button" data-language-choice="id" aria-pressed="true">ID</button><button type="button" data-language-choice="en" aria-pressed="false">EN</button></div><button class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="main-menu"><span aria-hidden="true">☰</span></button></div>
       <ul class="nav-links" id="main-menu">${links.map(([label, href, file]) => `<li><a href="${href}"${current === file ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}<li><a class="mobile-book" data-booking href="${whatsappUrl()}">Booking Sekarang</a></li></ul>
       <a class="button button-primary nav-book" data-booking href="${whatsappUrl()}">Booking Sekarang <span aria-hidden="true">↗</span></a>
@@ -383,7 +441,7 @@ function renderFooter() {
   footer.innerHTML = `
     <div class="page-wrap">
       <div class="footer-main">
-        <div><a class="brand footer-brand" href="${root}/index.html"><span class="brand-mark"><img src="${root}/aset/logo%20temankamera.PNG" alt=""></span><span>temankamera_</span></a><p class="footer-tagline">Your friend to capture every moment.</p></div>
+        <div><a class="brand footer-brand" href="${root}/index.html"><span class="brand-mark"><img src="${root}/aset/LOGO%20temankamera_.png" alt=""></span><span>temankamera_</span></a><p class="footer-tagline">Your friend to capture every moment.</p></div>
         <ul class="footer-links" aria-label="Navigasi footer"><li><a href="${root}/index.html">Home</a></li><li><a href="${pagePath('katalog')}">Katalog</a></li><li><a href="${pagePath('layanan')}">Layanan Kami</a></li><li><a href="${pagePath('galeri')}">Galeri Testimoni</a></li><li><a href="${pagePath('hasil-jepretan')}">Hasil Jepretan</a></li><li><a href="${pagePath('rules')}">Rules Sewa</a></li><li><a href="${pagePath('tentang')}">Tentang Kami</a></li><li><a href="${pagePath('kontak')}">Kontak</a></li></ul>
         <div class="footer-social"><strong>Ikuti cerita kami</strong><div class="social-links"><a class="social-link" href="${whatsappUrl()}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp temankamera_"><img src="${root}/aset/LOGO%20WA.jpg" alt=""><span>WhatsApp</span></a><a class="social-link" href="https://www.instagram.com/temankamera_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @temankamera_"><img src="${root}/aset/LOGO%20IG.jpg" alt=""><span>Instagram</span></a><a class="social-link" href="https://www.tiktok.com/@temankamera_" target="_blank" rel="noopener noreferrer" aria-label="TikTok @temankamera_"><img src="${root}/aset/LOGO%20TIKTOK.jpg" alt=""><span>TikTok</span></a></div></div>
       </div>
