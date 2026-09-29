@@ -70,8 +70,11 @@ const cameraShotImages = {
   ]
 };
 
+const rentalProducts = [
+  { id: 'instax-mini-13', name: 'Instax Mini 13', category: 'accessories', note: 'Camera only', price24: 45000, image: 'instax-mini-13-45k.jpeg', visual: 'INSTAX' }
+];
+
 const extraProducts = [
-  { id: 'instax-mini-13', name: 'Instax Mini 13', category: 'accessories', note: 'Camera only', price24: 45000, image: 'instax-mini-13-45k.jpeg', visual: 'INSTAX' },
   { id: 'paper-refill-putih', name: 'Paper Refill Fuji Polaroid', category: 'accessories', note: '1 pack', price24: 170000, image: 'paper-refill-fuji-polaroid-1-pack-170k.jpg', visual: 'PAPER' },
   { id: 'instax-bundle', name: 'Bundling Kamera + Paper Polaroid', category: 'accessories', note: '1 pack', price24: 210000, image: 'bundling-kamera-paper-polaroid-1-pack-210k.jpeg', visual: 'BUNDLE' },
   { id: 'jasa-pindahan-foto', name: 'Jasa Pindahan Foto', category: 'accessories', price24: 15000, image: 'jasa-pindahan-foto-15k.PNG' },
@@ -88,7 +91,7 @@ const galleryImageSets = [
   ['16.02.06', 3], ['16.02.07', 0], ['16.02.08', 0]
 ];
 
-const products = [...cameraProducts, ...extraProducts];
+const products = [...cameraProducts, ...rentalProducts, ...extraProducts];
 const money = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
 const root = document.body.dataset.root || '.';
 const pagePath = (name) => `${root}/pages/${name}.html`;
@@ -184,7 +187,7 @@ const englishText = {
   'Untuk booking, pilih kamera lalu hubungi kami untuk cek tanggal. DP 50% mengunci tanggal; pelunasan saat pengambilan.': 'To book, choose a camera and ask us to check your dates. A 50% deposit secures the booking; the balance is due at pickup.',
   'Jam buka 10.00–22.00.': 'We are open from 10:00 to 22:00.',
   'Area layanan Cibubur dan Bekasi. Tersedia COD, self pick up, dan self delivery.': 'We serve Cibubur and Bekasi, with meet-up, self-pickup, and self-delivery options.',
-  'Kami menyediakan Instax Mini 13, Paper Refill Fuji Polaroid, Bundling Kamera + Paper Polaroid, jasa pindahan foto, dan Type-C Lighting.': 'We offer Instax Mini 13, Paper Refill Fuji Polaroid, Bundling Kamera + Paper Polaroid, photo transfer, and Type-C Lighting.',
+  'Kami menyediakan Paper Refill Fuji Polaroid, Bundling Kamera + Paper Polaroid, jasa pindahan foto, dan Type-C Lighting.': 'We offer Paper Refill Fuji Polaroid, Bundling Kamera + Paper Polaroid, photo transfer, and Type-C Lighting.',
   'Baca rules sewa di halaman Rules Sewa. Untuk detail lainnya, tim kami siap membantu lewat WhatsApp.': 'Read the rental terms on the Rental Terms page. Our team can help with anything else on WhatsApp.',
   'Ikuti cerita kami': 'Follow our stories', 'Area layanan': 'Service area', 'Opsi layanan': 'Service options',
   'Kontak & Booking': 'Contact & Booking', 'Rules Sewa': 'Rental Terms',
@@ -299,12 +302,15 @@ function getAssistantReply(question) {
       : 'Area layanan Cibubur dan Bekasi. Tersedia COD, self pick up, dan self delivery. Tanyakan lokasi serta detailnya melalui WhatsApp.';
   }
   if (/instax|paper|pindah|transfer|lighting|layanan|service|accessor/.test(query)) {
+    const rentalList = rentalProducts.map(({ name, note, price24 }) =>
+      `${name}${note ? ` (${note})` : ''} (${money.format(price24)})`
+    );
     const serviceList = extraProducts.map(({ name, note, price24 }) =>
       `${name}${note ? ` (${note})` : ''} (${money.format(price24)})`
     );
     return currentLanguage === 'en'
-      ? `Services include ${serviceList.join(', ')}.`
-      : `Layanan kami: ${serviceList.join(', ')}.`;
+      ? `Rental products: ${rentalList.join(', ')}. Additional services: ${serviceList.join(', ')}.`
+      : `Produk yang disewakan: ${rentalList.join(', ')}. Layanan tambahan: ${serviceList.join(', ')}.`;
   }
   if (/rules|syarat|ketentuan|deposit|dp|denda|damage|return/.test(query)) {
     return currentLanguage === 'en'
