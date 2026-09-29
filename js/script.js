@@ -7,7 +7,8 @@ const cameraProducts = [
   { id: 'fujifilm-x-a5', name: 'Fujifilm X-A5', category: 'kamera', image: 'fujifilm-x-a5-24-jam-170k-48-jam-335k.jpeg', price24: 170000, price48: 335000 },
   { id: 'sony-dsc-w510', name: 'Sony DSC W510', category: 'kamera', image: 'sony-dsc-w510-24-jam-85k-48-jam-165k.jpeg', price24: 85000, price48: 165000 },
   { id: 'olympus-tg-320', name: 'Olympus TG 320', category: 'kamera', image: 'olympus-tg-320-24-jam-75k-48-jam-145k.jpeg', price24: 75000, price48: 145000 },
-  { id: 'fujifilm-x-a3', name: 'Fujifilm X-A3', category: 'kamera', image: 'fujifilm-x-a3-24-jam-150k-48-jam-295k.jpeg', price24: 150000, price48: 295000 }
+  { id: 'fujifilm-x-a3', name: 'Fujifilm X-A3', category: 'kamera', image: 'fujifilm-x-a3-24-jam-150k-48-jam-295k.jpeg', price24: 150000, price48: 295000 },
+  { id: 'instax-mini-13', name: 'Instax Mini 13', category: 'kamera', note: 'Camera only', price24: 45000, image: 'instax-mini-13-45k.jpeg', visual: 'INSTAX' }
 ];
 
 const cameraShotImages = {
@@ -70,9 +71,7 @@ const cameraShotImages = {
   ]
 };
 
-const rentalProducts = [
-  { id: 'instax-mini-13', name: 'Instax Mini 13', category: 'accessories', note: 'Camera only', price24: 45000, image: 'instax-mini-13-45k.jpeg', visual: 'INSTAX' }
-];
+const rentalProducts = [];
 
 const extraProducts = [
   { id: 'paper-refill-putih', name: 'Paper Refill Fuji Polaroid', category: 'accessories', note: '1 pack', price24: 170000, image: 'paper-refill-fuji-polaroid-1-pack-170k.jpg', visual: 'PAPER' },
@@ -283,7 +282,7 @@ function getAssistantReply(question) {
   if (/harga|price|biaya|cost|tarif/.test(query)) {
     const duration24 = currentLanguage === 'en' ? '24 hours' : '24 jam';
     const duration48 = currentLanguage === 'en' ? '48 hours' : '48 jam';
-    const rows = cameraProducts.map((product) => `${product.name}: ${money.format(product.price24)} / ${duration24}, ${money.format(product.price48)} / ${duration48}`);
+    const rows = cameraProducts.map((product) => `${product.name}: ${money.format(product.price24)} / ${duration24}${product.price48 !== undefined ? `, ${money.format(product.price48)} / ${duration48}` : ''}`);
     return currentLanguage === 'en'
       ? `Camera prices (24 / 48 hours):\n${rows.join('\n')}`
       : `Harga kamera (24 / 48 jam):\n${rows.join('\n')}`;
@@ -302,7 +301,7 @@ function getAssistantReply(question) {
       : 'Area layanan Cibubur dan Bekasi. Tersedia COD, self pick up, dan self delivery. Tanyakan lokasi serta detailnya melalui WhatsApp.';
   }
   if (/instax|paper|pindah|transfer|lighting|layanan|service|accessor/.test(query)) {
-    const rentalList = rentalProducts.map(({ name, note, price24 }) =>
+    const rentalList = [...cameraProducts.filter(({ id }) => id === 'instax-mini-13'), ...rentalProducts].map(({ name, note, price24 }) =>
       `${name}${note ? ` (${note})` : ''} (${money.format(price24)})`
     );
     const serviceList = extraProducts.map(({ name, note, price24 }) =>
@@ -457,10 +456,11 @@ function renderFooter() {
 
 function productCard(product) {
   const isCamera = product.category === 'kamera';
+  const hasSecondPrice = isCamera && product.price48 !== undefined;
   const photo = product.image
     ? `<img src="${root}/PRODUK%20YANG%20DI%20SEWA/${encodeURIComponent(product.image)}" alt="${product.name}" loading="lazy">`
     : `<span class="no-photo-tile" aria-hidden="true">${product.visual}</span>`;
-  const secondPrice = isCamera ? `<div class="price-line"><span>48 Jam</span><strong>${money.format(product.price48)}</strong></div>` : '';
+  const secondPrice = hasSecondPrice ? `<div class="price-line"><span>48 Jam</span><strong>${money.format(product.price48)}</strong></div>` : '';
   const href = `${pagePath('detail')}?id=${encodeURIComponent(product.id)}`;
   return `<article class="product-card ${isCamera ? '' : 'accessory-card'}" data-category="${product.category}">
     <div class="product-photo"><span class="availability">Cek ketersediaan</span>${photo}</div>
@@ -473,7 +473,8 @@ function productCard(product) {
 
 function renderProducts() {
   const featured = document.querySelector('[data-featured-products]');
-  if (featured) featured.innerHTML = cameraProducts.slice(0, 3).map(productCard).join('');
+  const featuredCameras = [...cameraProducts.slice(0, 3), ...cameraProducts.filter(({ id }) => id === 'instax-mini-13')];
+  if (featured) featured.innerHTML = featuredCameras.map(productCard).join('');
 
   const services = document.querySelector('[data-service-products]');
   if (services) services.innerHTML = extraProducts.map(productCard).join('');
@@ -515,9 +516,9 @@ function renderProductDetail() {
     ? `<img src="${root}/PRODUK%20YANG%20DI%20SEWA/${encodeURIComponent(product.image)}" alt="${product.name}">`
     : `<span class="no-photo-tile">${product.visual}</span>`;
   const priceRows = isCamera
-    ? `<div class="price-line"><span>24 Jam</span><strong>${money.format(product.price24)}</strong></div><div class="price-line"><span>48 Jam</span><strong>${money.format(product.price48)}</strong></div>`
+    ? `<div class="price-line"><span>24 Jam</span><strong>${money.format(product.price24)}</strong></div>${product.price48 !== undefined ? `<div class="price-line"><span>48 Jam</span><strong>${money.format(product.price48)}</strong></div>` : ''}`
     : `<div class="price-line"><span>${product.note || 'Harga'}</span><strong>${money.format(product.price24)}</strong></div>`;
-  target.innerHTML = `<div class="detail-layout"><div class="detail-photo">${image}</div><div class="detail-copy"><span class="product-kind">${isCamera ? 'Kamera' : 'Accessories'}</span><h1>${product.name}</h1><p>${isCamera ? 'Pilihan kamera rental temankamera_. Tanyakan ketersediaan untuk tanggal yang kamu inginkan.' : 'Layanan atau perlengkapan tambahan dari temankamera_. Hubungi kami untuk menanyakan detail dan ketersediaannya.'}</p><div class="detail-price">${priceRows}</div><div class="detail-spec"><h2>Durasi / detail</h2><p>${isCamera ? 'Pilihan durasi 24 jam atau 48 jam.' : product.note || 'Konfirmasi detail saat booking.'}</p></div><div class="detail-spec"><h2>Isi paket</h2><p>Konfirmasi kelengkapan paket saat booking melalui WhatsApp.</p></div><div class="detail-spec"><h2>Syarat sewa</h2><p>Baca rules sewa lengkap sebelum booking.</p></div><div class="detail-actions"><a class="button button-primary" data-booking="${product.name}" href="${whatsappUrl(product.name)}">Booking via WhatsApp ↗</a><a class="button button-secondary" href="${pagePath('rules')}">Baca Rules</a></div></div></div>`;
+  target.innerHTML = `<div class="detail-layout"><div class="detail-photo">${image}</div><div class="detail-copy"><span class="product-kind">${isCamera ? 'Kamera' : 'Accessories'}</span><h1>${product.name}</h1><p>${isCamera ? 'Pilihan kamera rental temankamera_. Tanyakan ketersediaan untuk tanggal yang kamu inginkan.' : 'Layanan atau perlengkapan tambahan dari temankamera_. Hubungi kami untuk menanyakan detail dan ketersediaannya.'}</p><div class="detail-price">${priceRows}</div><div class="detail-spec"><h2>Durasi / detail</h2><p>${isCamera ? product.price48 !== undefined ? 'Pilihan durasi 24 jam atau 48 jam.' : 'Tanyakan durasi sewa saat booking.' : product.note || 'Konfirmasi detail saat booking.'}</p></div><div class="detail-spec"><h2>Isi paket</h2><p>Konfirmasi kelengkapan paket saat booking melalui WhatsApp.</p></div><div class="detail-spec"><h2>Syarat sewa</h2><p>Baca rules sewa lengkap sebelum booking.</p></div><div class="detail-actions"><a class="button button-primary" data-booking="${product.name}" href="${whatsappUrl(product.name)}">Booking via WhatsApp ↗</a><a class="button button-secondary" href="${pagePath('rules')}">Baca Rules</a></div></div></div>`;
 }
 
 function renderCustomerGallery() {
